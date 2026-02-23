@@ -49,12 +49,12 @@ https://templatemo.com/tm-581-kind-heart-charity
 -----------------------------------------*/
 :root {
   --white-color:                  #ffffff;
-  --primary-color:                #5bc1ac;
+  --primary-color:                #6fbf44;
   --secondary-color:              #5a6f80;
   --section-bg-color:             #f0f8ff;
   --site-footer-bg-color:         #44525d;
   --custom-btn-bg-color:          #597081;
-  --custom-btn-bg-hover-color:    #5bc1ac;
+  --custom-btn-bg-hover-color:    #6fbf44;
   --dark-color:                   #000000;
   --p-color:                      #717275;
   --border-color:                 #e9eaeb;
@@ -207,6 +207,7 @@ strong {
   position: relative;
   overflow: hidden;
   transition: all 0.5s;
+  
 }
 
 .custom-block-wrap:hover {
@@ -229,6 +230,32 @@ strong {
   display: block;
 }
 
+.service-card-wrap{
+  aspect-ratio: 1/1;
+  flex: 1 1 calc(30% - 2rem);
+  margin-bottom: 1rem;
+  margin: 2rem;
+  border: black solid;
+}
+
+.service-card{
+  height:100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.divider {
+  border: none;            /* remove default hr border */
+  height: 4px;             /* thickness of the line */
+  background-color: #333;  /* dark gray */
+  border-radius: 5px;      /* rounded ends */
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 3em;
+  margin-right: 3em;
+}
 
 /*---------------------------------------
   PROGRESS BAR               
@@ -626,6 +653,12 @@ strong {
 .carousel-control-next-icon:hover, 
 .carousel-control-prev-icon:hover {
   background-color: var(--primary-color);
+}
+
+.hero-section{
+  height: 70vh;
+  min-height: 300px;
+  max-height: 700px;
 }
 
 
