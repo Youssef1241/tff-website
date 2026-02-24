@@ -51,7 +51,8 @@ https://templatemo.com/tm-581-kind-heart-charity
   --white-color:                  #ffffff;
   --primary-color:                #6fbf44;
   --secondary-color:              #5a6f80;
-  --section-bg-color:             #f0f8ff;
+  /* potential secondary color from logo gray #abacb1 */
+  --section-bg-color:             #f8eee3;
   --site-footer-bg-color:         #44525d;
   --custom-btn-bg-color:          #597081;
   --custom-btn-bg-hover-color:    #6fbf44;
@@ -201,22 +202,10 @@ strong {
 /*---------------------------------------
   CUSTOM BLOCK               
 -----------------------------------------*/
-.custom-block-wrap {
-  background: var(--white-color);
-  border-radius: var(--border-radius-medium);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.5s;
-  
-}
 
-.custom-block-wrap:hover {
+/* .custom-block-wrap:hover {
   box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
-}
-
-.custom-block-body {
-  padding: 30px;
-}
+} */
 
 .custom-block-image {
   display: block;
@@ -225,25 +214,57 @@ strong {
   object-fit: cover;
 }
 
+.custom-block-body{
+  justify-content: center;
+  place-items: center;
+  place-content: center;
+  text-align: center;
+}
+
 .custom-block .custom-btn {
   border-radius: 0;
   display: block;
 }
 
+.custom-gap{
+  gap: 5rem;
+}
+
 .service-card-wrap{
   aspect-ratio: 1/1;
-  flex: 1 1 calc(30% - 2rem);
+  display: flex;
+  flex-direction: column;
   margin-bottom: 1rem;
-  margin: 2rem;
-  border: black solid;
+  margin-top: 1rem;
+  box-shadow: 0 12px 20px rgba(0, 105, 14, 0.24);
+  background: var(--white-color);
+  border-radius: 25%;
+  overflow: hidden;
+  transition: all 0.8s;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.service-card-wrap:hover {
+  box-shadow: 0 1rem 4rem rgba(0, 105, 14, 0.24);
+  transform: scale(1.05)
 }
 
 .service-card{
-  height:100%;
+  /* height:100%; */
   display:flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem;
+  align-items: center;
+  padding: 30px;
+}
+
+.card-image{
+  width: 6rem;
+  height: 6rem;
+  margin: 0 auto 1rem auto;
+
 }
 
 .divider {
@@ -257,6 +278,9 @@ strong {
   margin-right: 3em;
 }
 
+*{
+  /* outline: 1px solid red; */
+}
 /*---------------------------------------
   PROGRESS BAR               
 -----------------------------------------*/
@@ -783,6 +807,9 @@ strong {
 .volunteer-section .custom-block-body {
   max-width: 440px;
   margin: 0 auto;
+
+
+
 }
 
 .volunteer-section .custom-block-body p {
