@@ -8,66 +8,22 @@
         <meta name="author" content="">
 
         <title>نحو عائلة فاعلة</title>
-        <link rel="icon" type="image/x-icon" href="images/tff-logo.png">
+        <link rel="icon" type="image/x-icon" href="/images/tff-logo.png">
 
         <!-- CSS FILES -->        
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-
-        <link href="../css/bootstrap-icons.css" rel="stylesheet">
-
-        <link href="../css/tff-stylesheet.css" rel="stylesheet">
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/bootstrap-icons.css" rel="stylesheet">
+        <link href="/css/tff-stylesheet.css" rel="stylesheet">
 
 
 </head>
     
 <body>
-
-    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="../images/tff-logo.png" class="logo img-fluid" alt="Kind Heart Charity">
-                <span>
-                    Towards Functional Families
-                    <!-- <small style="font-size: small;">الي عائلة فعَالة</small> -->
-                </span>
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link click-scroll" href="../index.html">الرئيسية</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link click-scroll" href="#">الكورسات</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link click-scroll" href="#">المدونة</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link click-scroll" href="#">تعرف علينا</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link click-scroll" href="#">English</a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-
+<div id="navbar"></div>
 
             <section class="section-padding">
                 <div class="container-fluid px-5">
-                    <div class="row">
+                    <div class="row"">
 
                         <div class="col-lg-10 col-12 text-right ms-auto me-5 header-section">
                             <h2>الكورسات</h2>
@@ -77,71 +33,37 @@
                             <hr class="divider">
                         </div>
                         <div class="col-12">
-                            <div class="row mt-5 me-5 ms-5 ">
-                                <div class="col-lg-5 col-md-6 col-sm-8 col-12 ms-auto course-card-wrap mb-5">
-                                    <div class="course-card mx-auto">
-            
-                                                <img src="../images/courses/adopted.jpg" class="course-image">
-                                                
-            
-                                    </div>
-                                    <div class="course-text">
-                                        <h5 class="mt-4 ">متبني</h5>
-                                    </div>
-                                </div>
-                                <div class="col-lg-5 col-md-6 col-sm-8 col-12 ms-auto course-card-wrap mb-5">
-                                    <div class="course-card mx-auto">
-            
-                                                <img src="../images/courses/adopted.jpg" class="course-image">
-                                                
-            
-                                    </div>
-                                    <div class="course-text">
-                                        <h5 class="mt-4">متبني 2</h5>
-                                    </div>
-                                </div>
-                                <div class="col-lg-5 col-md-6 col-sm-8 col-12 ms-auto course-card-wrap mb-5">
-                                    <div class="course-card mx-auto">
-            
-                                                <img src="../images/courses/adopted.jpg" class="course-image">
-                                                
-            
-                                    </div>
-                                    <div class="course-text">
-                                        <h5 class="mt-4">متبني 2</h5>
-                                    </div>
-                                </div>
-                                <div class="col-lg-5 col-md-6 col-sm-8 col-12 ms-auto course-card-wrap mb-5">
-                                    <div class="course-card mx-auto">
-            
-                                                <img src="../images/courses/adopted.jpg" class="course-image">
-                                                
-            
-                                    </div>
-                                    <div class="course-text">
-                                        <h5 class="mt-4">متبني 2</h5>
-                                    </div>
-                                </div>
-<!-- 
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                                    <div class="service-card-wrap ">
-            
-                                        <div class="custom-block service-card">
-                                            <div class="custom-block-body">
-                                                <img src="images/cards/colored-appointment.png" class="card-image">
-
-                                                <h5 class="mb-1" style="text-align: center;">احجز</h5>
-            
-                                                <p>احجز ميعاد في العيادة او اونلاين</p>
-            
-                                            </div>
+                            <div class="row mt-5 me-5 ms-5" id="courses-container">
+                            <script>
+                                let start = 1;
+                                let margin
+                                fetch('/ar/data.json').then(res=>res.json()).then(data=>{
+                                    const container = document.getElementById("courses-container");
+                                    data.courses.forEach(course => {
+                                        start? margin="ms":margin="me";
+                                        container.innerHTML += `
+                                    <div class="col-lg-5 col-md-6 col-sm-8 col-12 ${margin}-auto course-card-wrap mb-5">
+                                        <div class="course-card mx-auto">
+                                            <a href="course.html?id=${course.id}" class="stretched-link"></a>
+                
+                                                    <img src="${course.image}" class="course-image">
+                                                    
+                
+                                        </div>
+                                        <div class="course-text">
+                                            <h5 class="mt-4 ">${course.title}</h5>
                                         </div>
                                     </div>
-
-                                </div> -->
-
-
-
+                                        `;
+                                    if(start===0){
+                                        start = 1;
+                                    }
+                                    else{
+                                        start = 0;
+                                    }
+                                    });
+                                })
+                            </script>
                             </div>
                         </div>
                             
@@ -154,101 +76,16 @@
             
         </main>
 
-        <footer class="site-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-12 mb-4">
-                        <img src="../images/tff-logo.png" class="logo img-fluid" alt="">
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-12 mb-4">
-                        <!-- <h5 class="site-footer-title mb-3">Quick Links</h5> -->
-
-                        <ul class="footer-menu">
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">الرئيسية</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">الكورسات</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">المدونة</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">تعرف علينا</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">English</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-12 mx-auto">
-                        <h5 class="site-footer-title mb-3">تواصل معانا</h5>
-
-                        <div class="text-white mb-2 ms-auto contact-wrapper">
-                            <i class="bi-telephone ms-2"></i>
-                        
-                            <a href="tel:01272523330" class="site-footer-link contact-number">
-                                012 72523330
-                            </a>
-                        </div>
-                        <div class="text-white mb-2 ms-auto contact-wrapper">
-                            <i class="bi-envelope ms-2"></i>
-                        
-                            <a href="mailto:info@yourgmail.com" class="site-footer-link contact-number">
-                                towardsfunctionalfamilies@gmail.com
-                            </a>
-                        </div>
-
-                        <div class="text-white mb-2 ms-auto contact-wrapper">
-                            <i class="bi-geo-alt ms-2"></i>                            
-                            <a class="site-footer-link contact-number" href="https://www.bing.com/maps/search?v=2&pc=FACEBK&mid=8100&mkt=en-US&FORM=FBKPL1&q=26+ibn+El+Nafeis+Street+off+Makram+Ebid.+Nasr+City%2C+Cairo%2C+Egypt%2C+11759&cp=30.068304%7E31.345180&lvl=15.7&style=h">26 ibn El Nafeis Street off Makram Ebid. Nasr City, Cairo, Egypt, 11759</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="site-footer-bottom">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-6 col-md-7 col-12">
-                            <p class="copyright-text mb-0">
-                                Copyright © 2026 Towards Functional Families<br>
-                                Template by <a href="https://templatemo.com" target="_blank">TemplateMo</a> ·
-                                Icons by <a href="https://www.flaticon.com" target="_blank">Flaticon</a>
-                                (Tanah Basah, Freepik)
-                              </p>                           
-                        </div>
-                        
-                        <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
-                            <ul class="social-icon">
-
-                                <li class="social-icon-item">
-                                    <a href="https://www.facebook.com/tf.families" class="social-icon-link bi-facebook"></a>
-                                </li>
-
-                                <li class="social-icon-item">
-                                    <a href="https://www.instagram.com/towardsfunctionalfamilies?igsh=dWY2bXk1c3huaWxv" class="social-icon-link bi-instagram"></a>
-                                </li>
-
-                                <li class="social-icon-item">
-                                    <a href="https://www.linkedin.com/company/towards-functional-families/about/" class="social-icon-link bi-linkedin"></a>
-                                </li>
-
-                                <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link bi-tiktok"></a>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <div id="footer"></div>
 
         <!-- JAVASCRIPT FILES -->
-        <script src="../js/jquery.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
-        <script src="../js/jquery.sticky.js"></script>
-        <script src="../js/click-scroll.js"></script>
-        <script src="../js/counter.js"></script>
-        <script src="../js/custom.js"></script>
+        <script src="/js/include.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/jquery.sticky.js"></script>
+        <script src="/js/click-scroll.js"></script>
+        <script src="/js/counter.js"></script>
+        <script src="/js/custom.js"></script>
         <!-- <script src="js/sideways-scroll.js"></script> -->
 
     </body>

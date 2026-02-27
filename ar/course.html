@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>نحو عائلة فاعلة</title>
+        <link rel="icon" type="image/x-icon" href="/images/tff-logo.png">
+
+        <!-- CSS FILES -->        
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/bootstrap-icons.css" rel="stylesheet">
+        <link href="/css/tff-stylesheet.css" rel="stylesheet">
+
+
+</head>
+    
+<body>
+<div id="navbar"></div>
+
+            <section class="section-padding">
+                <div class="container-fluid px-5">
+                    <div class="row"">
+
+                        <div class="col-lg-10 col-12 text-right ms-auto me-5 header-section">
+                            <h2 id="title"></h2>
+                        </div>
+
+                        <div class="col-12 my-3 mb-5">
+                            <hr class="divider">
+                        </div>
+                        
+                        <div class="container">
+                            <div class="col-lg-10 col-md-6 col-sm-8 col-12 mx-auto">
+                                <div class="single-course-wrapper mx-auto mb-5">
+                                    <img class="single-course-image" id="image">
+                                </div>
+
+                                <p class="course-description mx-auto mb-5" id="description">
+                                    
+                                </p>
+<p class="mx-auto text-center">السعر: <strong id="price"></strong></p>
+                                <div class="text-center">
+                                    <a class="btn btn-outline-primary btn-lg w-50 book-button mb-4">
+                                        احجز
+                                    </a>
+                                    <a class="btn btn-outline-secondary btn-lg w-50" href="/ar/courses.html">
+                                      رجوع الي الكورسات
+                                    </a>
+                                </div>
+
+                            <script>
+                                const params = new URLSearchParams(window.location.search)
+                                const courseId = params.get("id");
+
+                                fetch('/ar/data.json').then(res=>res.json().then(data=>{
+                                    const course = data.courses.find(c => c.id === courseId);
+                                    
+                                    document.getElementById("title").textContent = course.title;
+                                    document.getElementById("description").innerHTML = course.description;
+                                    document.getElementById("price").textContent = course.price;
+                                    document.getElementById("image").src = course.image;
+                                }));
+                            </script>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            
+        </main>
+
+        <div id="footer"></div>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="/js/include.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/jquery.sticky.js"></script>
+        <script src="/js/click-scroll.js"></script>
+        <script src="/js/counter.js"></script>
+        <script src="/js/custom.js"></script>
+        <!-- <script src="js/sideways-scroll.js"></script> -->
+
+    </body>
+</html>

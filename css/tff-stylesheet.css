@@ -245,6 +245,7 @@ strong {
   transition: all 0.8s;
   justify-content: center;
   align-items: center;
+  position: relative;
   
 }
 
@@ -1410,7 +1411,7 @@ blockquote::before {
 
 .course-block{
   display: block;
-  outline: 1px black solid;
+  /* outline: 1px black solid; */
 }
 
 .course-card{
@@ -1419,6 +1420,8 @@ blockquote::before {
   border-radius: 5rem;
   overflow: hidden;
   box-shadow: 0 1rem 4rem rgba(0, 105, 14, 0.24);
+  transition: all 0.8s;
+  position: relative;
   
 }
 
@@ -1439,7 +1442,40 @@ blockquote::before {
   overflow-wrap:normal;
 }
 
+/*---------------------------------------
+  SINGLE COURSE PAGE
+-----------------------------------------*/
 
+.single-course-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-course-image {
+  border-radius: 25%;
+  max-width: 40rem;
+  height: auto;
+  display: block;
+}
+
+.course-description{
+  max-width: 60%;
+}
+
+.book-button{
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.book-button:hover{
+  background-color:#81d355;
+}
+
+.book-button:active{
+  background-color:#81d355;
+}
 
 /*---------------------------------------
   SITE FOOTER              
@@ -1810,14 +1846,20 @@ blockquote::before {
   }
 
   .course-card{
-    border-radius: 3rem;
+    border-radius: 2.5rem;
   }
-
+  
   .course-card-wrap{
     margin-bottom: 2rem;
   }
 
+  .single-course-image {
+    max-width:100%;
+  }
 
+  .course-description{
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width: 480px) {
