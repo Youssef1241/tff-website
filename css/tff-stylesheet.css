@@ -52,7 +52,7 @@ https://templatemo.com/tm-581-kind-heart-charity
   --primary-color:                #6fbf44;
   --secondary-color:              #5a6f80;
   /* potential secondary color from logo gray #abacb1 */
-  --section-bg-color:             #f8eee3;
+  --section-bg-color:             #fff5e7;
   --site-footer-bg-color:         #44525d;
   --custom-btn-bg-color:          #597081;
   --custom-btn-bg-hover-color:    #6fbf44;
@@ -85,6 +85,8 @@ https://templatemo.com/tm-581-kind-heart-charity
 body {
   background-color: var(--white-color);
   font-family: var(--body-font-family); 
+  overflow-x: hidden;
+  
 }
 
 
@@ -278,6 +280,10 @@ strong {
   margin-right: 3em;
 }
 
+.header-section{
+  max-width: fit-content;
+}
+
 /*---------------------------------------
   REVIEWS SECTION
 -----------------------------------------*/
@@ -316,7 +322,8 @@ strong {
 }
 
 .review-card{
-  /* width: 320px; */
+  width: 50%;
+  aspect-ratio: 2 1;
   padding: 2rem;
   background: white;
   border-radius: 16px;
@@ -471,7 +478,7 @@ strong {
 
 .navbar-brand {
   color: var(--primary-color);
-  font-size: var(--h6-font-size);
+  font-size: 16px;
   font-weight: var(--font-weight-bold);
 }
 
@@ -666,15 +673,9 @@ strong {
   margin-right: 15px;
 }
 
-
 /*---------------------------------------
   HERO & HERO SLIDE         
 -----------------------------------------*/
-.hero-section-full-height {
-  height: 680px;
-  min-height: 680px;
-  position: relative;
-}
 
 .carousel:hover .carousel-control-next-icon, 
 .carousel:hover .carousel-control-prev-icon {
@@ -683,7 +684,7 @@ strong {
 
 #hero-slide .carousel-item {
   height: 680px;
-  min-height: 680px;
+  min-height: 300px;
 }
 
 #hero-slide .carousel-caption {
@@ -740,11 +741,6 @@ strong {
   background-color: var(--primary-color);
 }
 
-.hero-section{
-  height: 70vh;
-  min-height: 300px;
-  max-height: 700px;
-}
 
 
 /*---------------------------------------
@@ -796,16 +792,33 @@ strong {
 
 .about-image {
   border-radius: var(--border-radius-medium);
-  display: block;
-  width: 350px;
-  height: 400px;
+  width: 100%;
+  max-width: 400px;
+  height: 450px;
   object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+.about-image-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  text-align: center;
 }
 
 .custom-text-block {
   padding: 60px 40px;
 }
 
+.about-row{
+  width: 100%;
+  max-width: 100%;
+  /* outline: 1px red dashed; */
+}
 
 /*---------------------------------------
   COUNTER NUMBERS              
@@ -1347,7 +1360,6 @@ blockquote::before {
   border-color: transparent;
 }
 
-
 /*---------------------------------------
   CONTACT SEARCH & DONATE & SUBCRIBE FORM              
 -----------------------------------------*/
@@ -1391,6 +1403,42 @@ blockquote::before {
 .donate-form .form-control {
   margin-bottom: 0;
 }
+
+/*---------------------------------------
+  COURSES PAGE
+-----------------------------------------*/
+
+.course-block{
+  display: block;
+  outline: 1px black solid;
+}
+
+.course-card{
+  aspect-ratio: 5/4;
+  max-height: 25rem;
+  border-radius: 5rem;
+  overflow: hidden;
+  box-shadow: 0 1rem 4rem rgba(0, 105, 14, 0.24);
+  
+}
+
+.course-card:hover {
+  box-shadow: 0 1rem 4rem rgba(0, 105, 14, 0.24);
+  transform: scale(1.05)
+}
+
+.course-image{
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+}
+
+.course-text{
+  max-width: inherit;
+  text-align: center;
+  overflow-wrap:normal;
+}
+
 
 
 /*---------------------------------------
@@ -1440,6 +1488,8 @@ blockquote::before {
 /*---------------------------------------
   FOOTER MENU               
 -----------------------------------------*/
+
+
 .footer-menu {
   column-count: 2;
   margin: 0;
@@ -1460,6 +1510,20 @@ blockquote::before {
   margin-bottom: 5px;
 }
 
+.contact-wrapper {
+  justify-content: flex-end;   /* push everything to the right */
+  text-align: right;
+}
+
+.contact-number {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.contact-number a{
+  text-decoration: none;
+  color:inherit;
+}
 
 /*---------------------------------------
   SOCIAL ICON               
@@ -1497,6 +1561,30 @@ blockquote::before {
 /*---------------------------------------
   RESPONSIVE STYLES               
 -----------------------------------------*/
+@media screen and (max-width: 767px) {
+  .header-section {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center !important;
+  }
+
+  .review-section {
+    padding: 2rem 1rem;
+  }
+
+  .review-wrapper {
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .review-card {
+    width: 100%;
+    aspect-ratio: auto;
+  }
+
+}
+
 @media screen and (min-width: 1600px) {
   .featured-block {
     min-height: inherit;
@@ -1582,10 +1670,6 @@ blockquote::before {
   .site-header .social-icon {
     text-align: left;
     margin-top: 5px;
-  }
-
-  .hero-section-full-height {
-    height: inherit;
   }
 
   .carousel:hover .carousel-control-next-icon, 
@@ -1708,7 +1792,14 @@ blockquote::before {
   .hero-section-full-height,
   #hero-slide .carousel-item,
   .carousel-image {
-    min-height: 520px;
+    min-height: 200px;
+  }
+  
+  #hero-slide .carousel-image{
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+
   }
 
   #hero-slide .carousel-caption {
@@ -1717,6 +1808,16 @@ blockquote::before {
     min-width: inherit;
     min-height: inherit;
   }
+
+  .course-card{
+    border-radius: 3rem;
+  }
+
+  .course-card-wrap{
+    margin-bottom: 2rem;
+  }
+
+
 }
 
 @media screen and (max-width: 480px) {
