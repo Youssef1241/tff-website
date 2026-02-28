@@ -1426,7 +1426,6 @@ blockquote::before {
 }
 
 .course-card:hover {
-  box-shadow: 0 1rem 4rem rgba(0, 105, 14, 0.24);
   transform: scale(1.05)
 }
 
@@ -1477,6 +1476,49 @@ blockquote::before {
   background-color:#81d355;
 }
 
+/*---------------------------------------
+  BLOG PAGE
+-----------------------------------------*/
+
+.blog-card-wrapper{
+  min-height: 10rem;
+  max-height: 20rem;
+  width: 70%;
+  border-radius: 3rem;
+  overflow: hidden;
+  box-shadow: 0 1rem 4rem rgba(0, 105, 14, 0.24);
+  transition: all 0.3s;
+}
+
+.blog-card-wrapper:hover{
+  transform: scale(1.01)
+}
+
+.blog-card{
+  position: relative;
+  margin: 2rem 2rem;
+  
+}
+
+.blog-card h3{
+  color: #f89635;
+}
+
+.blog-text{
+  display: -webkit-box;
+  -webkit-line-clamp: 3; 
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog-post img{
+  max-width: 100%;
+}
+
+/* *{
+  outline: 1px black solid;
+} */
 /*---------------------------------------
   SITE FOOTER              
 -----------------------------------------*/
@@ -1617,6 +1659,15 @@ blockquote::before {
   .review-card {
     width: 100%;
     aspect-ratio: auto;
+  }
+
+  .blog-card-wrapper{
+    /* max-height: 50%; */
+    width: auto;
+  }
+
+  .blog-card h3{
+    font-size: 20px;
   }
 
 }
