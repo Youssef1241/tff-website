@@ -1,4 +1,4 @@
-function getTextPreview(html,maxLength = 150){
+function getTextPreview(html){
     const div = document.createElement("div");
     div.innerHTML = html;
     console.log(html);

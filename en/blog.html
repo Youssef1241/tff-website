@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,26 +7,24 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>نحو عائلة فاعلة</title>
+        <title>Towards Functional Families</title>
         <link rel="icon" type="image/x-icon" href="/images/tff-logo.png">
 
         <!-- CSS FILES -->        
         <link href="/css/bootstrap.min.css" rel="stylesheet">
         <link href="/css/bootstrap-icons.css" rel="stylesheet">
         <link href="/css/tff-stylesheet.css" rel="stylesheet">
-
-
 </head>
     
 <body>
-<div id="ar-navbar"></div>
+<div id="en-navbar"></div>
 
             <section class="section-padding">
                 <div class="container-fluid px-5">
                     <div class="row"">
 
-                        <div class="col-lg-10 col-12 text-right ms-auto me-5 header-section">
-                            <h2>المدونة</h2>
+                        <div class="col-lg-10 col-12 text-left me-auto ms-5 header-section">
+                            <h2>Newsletter</h2>
                         </div>
 
                         <div class="col-12 my-3 mb-5">
@@ -37,14 +35,14 @@
                             <script>
                                 fetch('/data.json').then(res=>res.json()).then(data=>{
                                     const container = document.getElementById("post-container");
-                                    data.newsletter.forEach(post => {
-                                        let text = getTextPreview(post.description,30000);
+                                    data.ennewsletter.forEach(post => {
+                                        let text = getTextPreview(post.description);
                                         container.innerHTML += `
                                         <div class="col-lg-5 col-md-6 col-sm-8 col-12 mb-5 blog-card-wrapper ">
                                             <div class="blog-card">
                                                 <a href="blogpost.html?id=${post.id}" class="stretched-link"></a>
                                                 <h3>${post.title}</h3>
-                                                <small><i class="bi bi-clock ms-2"></i><i>${post.date}</i></small>
+                                                <small><i class="bi bi-clock me-2"></i><i>${post.date}</i></small>
                                                 <p class="blog-text">${text}</p>
                                                         
                     
@@ -65,7 +63,7 @@
             
         </main>
 
-        <div id="ar-footer"></div>
+        <div id="en-footer"></div>
 
         <!-- JAVASCRIPT FILES -->
         <script src="/js/clean-posts.js"></script>

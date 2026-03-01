@@ -36,14 +36,22 @@
                         <div class="container">
                             <div class="col-lg-10 col-md-6 col-sm-8 col-12 mx-auto">
                                 <div class="single-course-wrapper mx-auto mb-5">
-                                    <img class="single-course-image" id="image">
+                                    <img class="book-course-image" id="image">
                                 </div>
 
-                                <p class="course-description mx-auto mb-5" id="description">
-                                    
-                                </p>
-                                <p class="mx-auto text-center">السعر: <strong id="price"></strong></p>
-
+                                <div class="book-course-form mt-5 mx-auto">
+                                    <form method="POST" class="custom-form course-form mb-5 mt-5">
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">الاسم</label>
+                                            <input type = "text" class="form-control" id="name" placeholder="ادخل اسمك">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">البريد الالكتروني</label>
+                                            <input type = "email" class="form-control" id="email" placeholder="بريدك الالكتروني">
+                                        </div>
+                                        <button type="submit" class="book-button btn btn-primary w-100">إرسال</button>
+                                    </form>
+                                </div>
                                 <script>
                                 const params = new URLSearchParams(window.location.search);
                                 const courseId = params.get("id");
@@ -52,26 +60,11 @@
                                     .then(res => res.json())
                                     .then(data => {
                                         const course = data.courses.find(c => c.id === courseId);
-
-                                        document.getElementById("title").textContent = course.title;
-                                        document.getElementById("description").innerHTML = course.description;
-                                        document.getElementById("price").textContent = course.price;
+                                        document.getElementById("title").textContent = 'احجز في " ' + course.title + '"' ;
                                         document.getElementById("image").src = course.image;
-
-                                        const bookBtn = document.getElementById("book-button");
-                                        if (bookBtn) {
-                                            bookBtn.href = `book-course.html?id=${courseId}`;
-                                        }
                                     });
                                 </script>
-                                <div class="text-center">
-                                    <a class="btn btn-outline-primary btn-lg w-50 book-button mb-4" id="book-button" href="#">
-                                        احجز
-                                    </a>
-                                    <a class="btn btn-outline-secondary btn-lg w-50 back-button" href="/ar/courses.html">
-                                      رجوع الي الكورسات
-                                    </a>
-                                </div>
+
                             </div>
                         </div>
 

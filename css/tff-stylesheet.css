@@ -1463,17 +1463,61 @@ blockquote::before {
 }
 
 .book-button{
-  background-color: var(--primary-color);
-  color: white;
+
+  background: var(--custom-btn-bg-color);
   border: none;
+  border-radius: var(--border-radius-large);
+  color: var(--white-color);
+  font-size: var(--p-font-size);
+  font-weight: var(--font-weight-semibold);
+  transition: all 0.3s;
+  margin-bottom: 0;
 }
 
-.book-button:hover{
-  background-color:#81d355;
+.book-button:hover, .book-button:focus, .book-button:active{
+  background: var(--custom-btn-bg-hover-color);
+  border-color: transparent;
 }
 
-.book-button:active{
-  background-color:#81d355;
+.back-button{
+  background: #ffffff00;
+  border: 2px var(--custom-btn-bg-color) solid;
+  border-radius: var(--border-radius-large);
+  color: var(--custom-btn-bg-color);
+  font-size: var(--p-font-size);
+  font-weight: var(--font-weight-semibold);
+  transition: all 0.3s;
+  margin-bottom: 0;
+}
+
+.back-button:hover,.back-button:focus,.back-button:active{
+  color: white;
+  background-color: var(--custom-btn-bg-color);
+}
+
+/*---------------------------------------
+  BOOK COURSE PAGE
+-----------------------------------------*/
+
+.book-course-image {
+  border-radius: 25%;
+  max-width: 10rem;
+  height: auto;
+  display: block;
+}
+
+.book-course-form{
+    /* max-width: 50rem; */
+    max-width: fit-content;
+    padding: 2rem;
+    max-height: 25rem;
+    border-radius: 5rem;
+    overflow: hidden;
+    box-shadow: 0 1rem 4rem rgba(0, 105, 14, 0.24);
+    
+}
+.course-form{
+  /* margin: 5rem 10rem; */
 }
 
 /*---------------------------------------

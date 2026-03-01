@@ -26,38 +26,37 @@
                     <div class="row"">
 
                         <div class="col-lg-10 col-12 text-right ms-auto me-5 header-section">
-                            <h2>المدونة</h2>
+                            <h2 id="title">احجز ميعاد</h2>
                         </div>
 
                         <div class="col-12 my-3 mb-5">
                             <hr class="divider">
                         </div>
+                        
+                        <div class="container">
+                            <div class="col-lg-10 col-md-6 col-sm-8 col-12 mx-auto">
+                                <div class="single-course-wrapper mx-auto mb-5">
+                                    <img class="book-course-image" id="image">
+                                </div>
 
-                        <div class="col-12" id="post-container">
-                            <script>
-                                fetch('/data.json').then(res=>res.json()).then(data=>{
-                                    const container = document.getElementById("post-container");
-                                    data.newsletter.forEach(post => {
-                                        let text = getTextPreview(post.description,30000);
-                                        container.innerHTML += `
-                                        <div class="col-lg-5 col-md-6 col-sm-8 col-12 mb-5 blog-card-wrapper ">
-                                            <div class="blog-card">
-                                                <a href="blogpost.html?id=${post.id}" class="stretched-link"></a>
-                                                <h3>${post.title}</h3>
-                                                <small><i class="bi bi-clock ms-2"></i><i>${post.date}</i></small>
-                                                <p class="blog-text">${text}</p>
-                                                        
-                    
-                                            </div>
+                                <div class="book-course-form mt-5 mx-auto">
+                                    <form method="POST" class="custom-form course-form mb-5 mt-5">
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">الاسم</label>
+                                            <input type = "text" class="form-control" id="name" placeholder="ادخل اسمك">
                                         </div>
-                                        `
-                                    });
-                                })
-                            </script>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">البريد الالكتروني</label>
+                                            <input type = "email" class="form-control" id="email" placeholder="بريدك الالكتروني">
+                                        </div>
+                                        <button type="submit" class="book-button btn btn-primary w-100">إرسال</button>
+                                    </form>
+                                </div>
 
 
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>
@@ -68,7 +67,6 @@
         <div id="ar-footer"></div>
 
         <!-- JAVASCRIPT FILES -->
-        <script src="/js/clean-posts.js"></script>
         <script src="/js/include.js"></script>
         <script src="/js/jquery.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>

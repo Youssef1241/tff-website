@@ -19,7 +19,7 @@
 </head>
     
 <body>
-<div id="navbar"></div>
+<div id="ar-navbar"></div>
 
             <section class="section-padding">
                 <div class="container-fluid px-5">
@@ -37,7 +37,7 @@
                             <script>
                                 let start = 1;
                                 let margin
-                                fetch('/ar/data.json').then(res=>res.json()).then(data=>{
+                                fetch('/data.json').then(res=>res.json()).then(data=>{
                                     const container = document.getElementById("courses-container");
                                     data.courses.forEach(course => {
                                         start? margin="ms":margin="me";
@@ -76,7 +76,7 @@
             
         </main>
 
-        <div id="footer"></div>
+        <div id="ar-footer"></div>
 
         <!-- JAVASCRIPT FILES -->
         <script src="/js/include.js"></script>

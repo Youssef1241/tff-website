@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Towards Functional Families</title>
+        <link rel="icon" type="image/x-icon" href="/images/tff-logo.png">
+
+        <!-- CSS FILES -->        
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/bootstrap-icons.css" rel="stylesheet">
+        <link href="/css/tff-stylesheet.css" rel="stylesheet">
+
+</head>
+    
+<body>
+<div id="en-navbar"></div>
+
+            <section class="section-padding">
+                <div class="container-fluid px-5">
+                    <div class="row"">
+
+                        <div class="col-lg-10 col-12 text-right me-auto ms-5 header-section">
+                            <h2>Courses</h2>
+                        </div>
+
+                        <div class="col-12 my-3 mb-5">
+                            <hr class="divider">
+                        </div>
+                        <div class="col-12">
+                            <div class="row mt-5 me-5 ms-5" id="courses-container">
+                            <script>
+                                let start = 1;
+                                let margin
+                                fetch('/data.json').then(res=>res.json()).then(data=>{
+                                    const container = document.getElementById("courses-container");
+                                    data.encourses.forEach(course => {
+                                        start? margin="me":margin="ms";
+                                        container.innerHTML += `
+                                    <div class="col-lg-5 col-md-6 col-sm-8 col-12 ${margin}-auto course-card-wrap mb-5">
+                                        <div class="course-card mx-auto">
+                                            <a href="course.html?id=${course.id}" class="stretched-link"></a>
+                
+                                                    <img src="${course.image}" class="course-image">
+                                                    
+                
+                                        </div>
+                                        <div class="course-text">
+                                            <h5 class="mt-4 ">${course.title}</h5>
+                                        </div>
+                                    </div>
+                                        `;
+                                    if(start===0){
+                                        start = 1;
+                                    }
+                                    else{
+                                        start = 0;
+                                    }
+                                    });
+                                })
+                            </script>
+                            </div>
+                        </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            
+        </main>
+
+        <div id="en-footer"></div>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="/js/include.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/jquery.sticky.js"></script>
+        <script src="/js/click-scroll.js"></script>
+        <script src="/js/counter.js"></script>
+        <script src="/js/custom.js"></script>
+        <!-- <script src="js/sideways-scroll.js"></script> -->
+
+    </body>
+</html>

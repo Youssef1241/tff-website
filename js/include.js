@@ -11,11 +11,17 @@ function changeLanguage(lang){
     window.location.href="/en/index.html";
     return;
   }
+  else if (currentPath === "/en/index.html"){
+    window.location.href="/index.html";
+    return;
+  }
 
   let newPath = currentPath.replace(/\/(ar|en)\//,`/${lang}/`);
 
   window.location.href  = newPath;
 }
-  loadHTML("navbar", "/ar/navbar.html");
-  loadHTML("footer", "/ar/footer.html");
+  loadHTML("ar-navbar", "/ar/navbar.html");
+  loadHTML("ar-footer", "/ar/footer.html");
+  loadHTML("en-navbar","/en/navbar.html");
+  loadHTML("en-footer","/en/footer.html");
 
