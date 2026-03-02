@@ -24,17 +24,17 @@ export default async function handler(req, res) {
   
     res.setHeader("Content-Type", "text/html");
     res.send(`
-      <!DOCTYPE html>
-      <html>
+    <!DOCTYPE html>
+    <html>
       <body>
-      <script>
+        <script>
         window.opener.postMessage(
-          'authorization:github:${token}',
-          window.location.origin
+        "authorization:github:${token}",
+        "https://tff-website-mu.vercel.app"
         );
-        window.close();
-      </script>
+          window.close();
+        </script>
       </body>
-      </html>
+    </html>
     `);
   }
