@@ -18,11 +18,9 @@ export default async function handler(req, res) {
     const token = data.access_token;
   
     if (!token) {
-      res.status(401).send("Auth failed");
+      res.status(401).send("Auth failed - no token returned");
       return;
     }
-  
-    const content = JSON.stringify({ token, provider: "github" });
   
     res.setHeader("Content-Type", "text/html");
     res.send(`
@@ -30,19 +28,10 @@ export default async function handler(req, res) {
       <html>
       <body>
       <script>
-        (function() {
-          function receiveMessage(e) {
-            console.log("receiveMessage %o", e);
-          }
-          window.addEventListener("message", receiveMessage, false);
-          window.opener.postMessage(
-            'authorization:github:success:${content}',
-            '*'
-          );
-          setTimeout(function() {
-            window.close();
-          }, 1000);
-        })();
+        const token = ${JSON.stringify(token)};
+        const msg = 'authorization:github:success:' + JSON.stringify({ token, provider: "github" });
+        window.opener.postMessage(msg, '*');
+        setTimeout(() => window.close(), 500);
       </script>
       </body>
       </html>
