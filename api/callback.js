@@ -24,16 +24,18 @@ export default async function handler(req, res) {
   
     res.setHeader("Content-Type", "text/html");
     res.send(`
-      <!DOCTYPE html>
-      <html>
-      <body>
-      <script>
-        const token = ${JSON.stringify(token)};
-        const msg = 'authorization:github:success:' + JSON.stringify({ token, provider: "github" });
-        window.opener.postMessage(msg, '*');
-        setTimeout(() => window.close(), 500);
-      </script>
-      </body>
-      </html>
-    `);
+        <!DOCTYPE html>
+        <html>
+        <body>
+        <script>
+          const token = ${JSON.stringify(token)};
+          const msg = 'authorization:github:success:' + JSON.stringify({ token, provider: "github" });
+          setTimeout(() => {
+            window.opener.postMessage(msg, '*');
+            setTimeout(() => window.close(), 500);
+          }, 500);
+        </script>
+        </body>
+        </html>
+      `);
   }
