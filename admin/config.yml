@@ -2,7 +2,7 @@ backend:
   name: github
   repo: Youssef1241/tff-website
   branch: main
-  base_url: https://your-site.vercel.app
+  base_url: https://tff-website-mu.vercel.app
   auth_endpoint: api/auth
 
 media_folder: "/images"
