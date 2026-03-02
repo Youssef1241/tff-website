@@ -5,27 +5,13 @@ backend:
   base_url: https://tff-website-mu.vercel.app
   auth_endpoint: /api/auth
 
-media_folder: "/images"
+media_folder: "images"
+public_folder: "/images"
 
 collections:
-  - name: "newsletter"
-    label: "Newsletter"
-    folder: "_newsletter"
+  - name: "test"
+    label: "Test"
+    folder: "_test"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
-
-  - name: "courses"
-    label: "Courses"
-    folder: "_courses"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
-      - { label: "Price", name: "price", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
