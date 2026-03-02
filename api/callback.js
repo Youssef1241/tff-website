@@ -22,16 +22,29 @@ export default async function handler(req, res) {
       return;
     }
   
-    // Decap CMS expects this exact postMessage format
-    const script = `
-      <script>
-        window.opener.postMessage(
-          'authorization:github:success:${JSON.stringify({ token, provider: "github" })}',
-          '*'
-        );
-      </script>
-    `;
+    const content = JSON.stringify({ token, provider: "github" });
   
     res.setHeader("Content-Type", "text/html");
-    res.send(script);
+    res.send(`
+      <!DOCTYPE html>
+      <html>
+      <body>
+      <script>
+        (function() {
+          function receiveMessage(e) {
+            console.log("receiveMessage %o", e);
+          }
+          window.addEventListener("message", receiveMessage, false);
+          window.opener.postMessage(
+            'authorization:github:success:${content}',
+            '*'
+          );
+          setTimeout(function() {
+            window.close();
+          }, 1000);
+        })();
+      </script>
+      </body>
+      </html>
+    `);
   }
