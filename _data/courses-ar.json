@@ -1,0 +1,11 @@
+{
+  "courses": [
+    {
+      "title": "متبني",
+      "description": "تست",
+      "thumbnail": "/images/courses/adopted.jpg",
+      "price": "4000EGP",
+      "body": "Hello\n\ntest\n\n**bold**"
+    }
+  ]
+}
