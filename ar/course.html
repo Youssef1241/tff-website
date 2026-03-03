@@ -44,19 +44,20 @@
                                 </p>
                                 <p class="mx-auto text-center">السعر: <strong id="price"></strong></p>
 
+                                <script src="https://unpkg.com/marked@4.3.0/marked.min.js"></script>
                                 <script>
                                 const params = new URLSearchParams(window.location.search);
                                 const courseId = params.get("id");
                                 
-                                fetch('/data.json')
+                                fetch('https://raw.githubusercontent.com/Youssef1241/tff-website/main/_data/courses-ar.json')
                                     .then(res => res.json())
                                     .then(data => {
                                         const course = data.courses.find(c => c.id === courseId);
 
                                         document.getElementById("title").textContent = course.title;
-                                        document.getElementById("description").innerHTML = course.description;
+                                        document.getElementById("description").innerHTML = marked.parse(course.body);
                                         document.getElementById("price").textContent = course.price;
-                                        document.getElementById("image").src = course.image;
+                                        document.getElementById("image").src = course.thumbnail;
 
                                         const bookBtn = document.getElementById("book-button");
                                         if (bookBtn) {

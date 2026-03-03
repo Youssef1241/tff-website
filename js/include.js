@@ -7,7 +7,8 @@ async function loadHTML(id, file) {
 
 function changeLanguage(lang){
   let currentPath = window.location.pathname;
-  if (currentPath === "/index.html"){
+
+  if (currentPath === "/index.html" || currentPath === "/"){
     window.location.href="/en/index.html";
     return;
   }

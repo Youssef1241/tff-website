@@ -31,16 +31,17 @@
                             <div id="description"></div>
                             
                         </div>
+                        <script src="https://unpkg.com/marked@4.3.0/marked.min.js"></script>
                             <script>
                                 const params = new URLSearchParams(window.location.search)
                                 const postId = params.get("id");
 
-                                fetch('/data.json').then(res=>res.json().then(data=>{
-                                    const post = data.ennewsletter.find(p => p.id === postId);
+                                fetch('https://raw.githubusercontent.com/Youssef1241/tff-website/main/_data/newsletter-en.json').then(res=>res.json().then(data=>{
+                                    const post = data.issues.find(p => p.id === postId);
                                     
                                     document.getElementById("title").textContent = post.title;
                                     document.getElementById("date").innerHTML = post.date;
-                                    document.getElementById("description").innerHTML = post.description;
+                                    document.getElementById("description").innerHTML = marked.parse(post.body);
                                 }));
 
                             </script>

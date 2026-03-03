@@ -6,7 +6,7 @@
       "description": "Test description hi",
       "thumbnail": "/images/courses/adopted.jpg",
       "price": "4000EGP",
-      "body": "sup"
+      "body": "# Hello\n\n**bold**"
     }
   ]
 }

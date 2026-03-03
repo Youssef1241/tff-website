@@ -34,11 +34,12 @@
                         </div>
 
                         <div class="col-12" id="post-container">
+                            <script src="https://unpkg.com/marked@4.3.0/marked.min.js"></script>
                             <script>
-                                fetch('/data.json').then(res=>res.json()).then(data=>{
+                                fetch('https://raw.githubusercontent.com/Youssef1241/tff-website/main/_data/newsletter-ar.json').then(res=>res.json()).then(data=>{
                                     const container = document.getElementById("post-container");
-                                    data.newsletter.forEach(post => {
-                                        let text = getTextPreview(post.description,30000);
+                                    data.issues.forEach(post => {
+                                        let text = getTextPreview(marked.parse(post.body));
                                         container.innerHTML += `
                                         <div class="col-lg-5 col-md-6 col-sm-8 col-12 mb-5 blog-card-wrapper ">
                                             <div class="blog-card">

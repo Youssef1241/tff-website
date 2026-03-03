@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>نحو عائلة فاعلة</title>
+        <title>Towards Functional Families</title>
         <link rel="icon" type="image/x-icon" href="/images/tff-logo.png">
 
         <!-- CSS FILES -->        
@@ -19,13 +19,13 @@
 </head>
     
 <body>
-<div id="ar-navbar"></div>
+<div id="en-navbar"></div>
 
             <section class="section-padding">
                 <div class="container-fluid px-5">
                     <div class="row"">
 
-                        <div class="col-lg-10 col-12 text-right ms-auto me-5 header-section">
+                        <div class="col-lg-10 col-12 text-right mx-auto ms-5 header-section">
                             <h2 id="title"></h2>
                         </div>
 
@@ -36,35 +36,42 @@
                         <div class="container">
                             <div class="col-lg-10 col-md-6 col-sm-8 col-12 mx-auto">
                                 <div class="single-course-wrapper mx-auto mb-5">
-                                    <img class="book-course-image" id="image">
+                                    <img class="single-course-image" id="image">
                                 </div>
 
-                                <div class="book-course-form mt-5 mx-auto">
-                                    <form method="POST" class="custom-form course-form mb-5 mt-5">
-                                        <div class="mb-3">
-                                            <label for="name" class="form-label">الاسم</label>
-                                            <input type = "text" class="form-control" id="name" placeholder="ادخل اسمك">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="email" class="form-label">البريد الالكتروني</label>
-                                            <input type = "email" class="form-control" id="email" placeholder="بريدك الالكتروني">
-                                        </div>
-                                        <button type="submit" class="book-button btn btn-primary w-100">إرسال</button>
-                                    </form>
-                                </div>
+                                <p class="course-description mx-auto mb-5" id="description">
+                                    
+                                </p>
+                                <p class="mx-auto text-center">Price: <strong id="price"></strong></p>
+                                <script src="https://unpkg.com/marked@4.3.0/marked.min.js"></script>
                                 <script>
                                 const params = new URLSearchParams(window.location.search);
                                 const courseId = params.get("id");
                                 
-                                fetch('https://raw.githubusercontent.com/Youssef1241/tff-website/main/_data/courses-ar.json')
+                                fetch('https://raw.githubusercontent.com/Youssef1241/tff-website/main/_data/courses-en.json')
                                     .then(res => res.json())
                                     .then(data => {
                                         const course = data.courses.find(c => c.id === courseId);
-                                        document.getElementById("title").textContent = 'احجز في " ' + course.title + '"' ;
+
+                                        document.getElementById("title").textContent = course.title;
+                                        document.getElementById("price").textContent = course.price;
                                         document.getElementById("image").src = course.thumbnail;
+                                        document.getElementById("description").innerHTML = marked.parse(course.body);
+                                        
+                                        const bookBtn = document.getElementById("book-button");
+                                        if (bookBtn) {
+                                            bookBtn.href = `book-course.html?id=${courseId}`;
+                                        }
                                     });
                                 </script>
-
+                                <div class="text-center">
+                                    <a class="btn btn-outline-primary btn-lg w-50 book-button mb-4" id="book-button" href="#">
+                                        Book
+                                    </a>
+                                    <a class="btn btn-outline-secondary btn-lg w-50 back-button" href="/ar/courses.html">
+                                      Back to Courses
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
@@ -75,14 +82,14 @@
             
         </main>
 
-        <div id="ar-footer"></div>
+        <div id="en-footer"></div>
 
         <!-- JAVASCRIPT FILES -->
         <script src="/js/include.js"></script>
         <script src="/js/jquery.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
         <script src="/js/jquery.sticky.js"></script>
-        <script src="/js/click-scroll.js"></script>
+        <!-- <script src="/js/click-scroll.js"></script> -->
         <script src="/js/counter.js"></script>
         <script src="/js/custom.js"></script>
         <!-- <script src="js/sideways-scroll.js"></script> -->
