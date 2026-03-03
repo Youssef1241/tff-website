@@ -2,11 +2,18 @@
   "courses": [
     {
       "id": "96fdab07-5353-4f34-91b9-b2958b03981e",
-      "title": "Course 1",
-      "description": "Test description hi",
-      "thumbnail": "/images/courses/adopted.jpg",
-      "price": "4000EGP",
-      "body": "# Hello\n\n**bold**"
+      "title": "Raising Confident Teenagers",
+      "thumbnail": "/images/slide/course-2.jpg",
+      "price": "2000",
+      "body": "## What You Will Learn\n### Module 1: Understanding the Teenage Brain\n\nTeenagers are not just tall children — their brains are undergoing a massive transformation that explains much of their behaviour.\n\n### Module 2: Communication That Works\n\nLearn how to talk with your teenager, not at them. Practical scripts for keeping communication open even through conflict.\n\n### Module 3: Building Self-Esteem\n\nHow to nurture a strong sense of identity and self-worth, and avoid the common mistakes that quietly erode confidence.\n\n### Module 4: Setting Boundaries With Love\n\nBoundaries are not punishment — they are a form of care. Learn how to set firm, fair limits your teenager will actually respect.",
+      "description": "Test description hi"
+    },
+    {
+      "id": "ca6e3b3f-4b29-4eba-a008-5ad7ca116bc7",
+      "title": "The Early Years: Parenting Children Ages 3–7",
+      "thumbnail": "/images/slide/course.jpg",
+      "price": "3000",
+      "body": "## Course Overview\n\n### Module 1: Emotional Intelligence Starts Early\n\nChildren this age feel everything intensely but lack the words to express it. Learn how to help your child name and manage their emotions.\n\n### Module 2: Positive Discipline\nDiscover discipline strategies that teach responsibility and respect while keeping your relationship with your child strong.\n\n### Module 3: The Power of Play\n\nPlay is how young children learn. Use play intentionally to develop creativity, social skills, and problem-solving ability.\n\n### Module 4: Preparing for School\n\nPractical steps to make sure your child enters school feeling confident, curious, and ready to thrive."
     }
   ]
 }
