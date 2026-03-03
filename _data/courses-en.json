@@ -1,0 +1,12 @@
+{
+  "courses": [
+    {
+      "id": "96fdab07-5353-4f34-91b9-b2958b03981e",
+      "title": "Course 1",
+      "description": "Test description hi",
+      "thumbnail": "/images/courses/adopted.jpg",
+      "price": "4000EGP",
+      "body": "sup"
+    }
+  ]
+}
