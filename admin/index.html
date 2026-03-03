@@ -6,14 +6,6 @@
   <title>Content Manager</title>
 </head>
 <body>
-  <script>
-    // show fetch result for config.yml
-    fetch('config.yml').then(async r => {
-      console.log('config.yml status', r.status, 'content-type', r.headers.get('content-type'));
-      const t = await r.text();
-      console.log('--- start of config.yml ---\n', t.slice(0,2000), '\n--- end ---');
-      return r;
-    }).catch(e => console.error('fetch config.yml failed', e));
-  </script>
-  <script src="https://unpkg.com/decap-cms@3.3.3/dist/decap-cms.js"></script></body>
+  <script src="https://unpkg.com/decap-cms@3.3.3/dist/decap-cms.js"></script>
+</body>
 </html>

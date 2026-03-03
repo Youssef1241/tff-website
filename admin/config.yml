@@ -2,16 +2,29 @@ backend:
   name: github
   repo: Youssef1241/tff-website
   branch: main
-  base_url: https://tff-website-mu.vercel.app
-  auth_endpoint: /api/auth
+  base_url: https://netlify-cms-github-oauth-provider-lovat.vercel.app
 
 media_folder: "images"
-public_folder: "/images"
 
 collections:
-  - name: "test"
-    label: "Test"
-    folder: "_test"
+  - name: "newsletter"
+    label: "Newsletter"
+    folder: "_newsletter"
     create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "courses"
+    label: "Courses"
+    folder: "_courses"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
+      - { label: "Price", name: "price", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
