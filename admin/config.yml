@@ -21,7 +21,7 @@ collections:
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Thumbnail", name: "thumbnail", widget: "image" }
               - { label: "Price", name: "price", widget: "string" }
-              - { label: "Body", name: "body", widget: "html" }
+              - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "courses-ar"
     label: "Courses (Arabic)"
@@ -38,7 +38,7 @@ collections:
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Thumbnail", name: "thumbnail", widget: "image" }
               - { label: "Price", name: "price", widget: "string" }
-              - { label: "Body", name: "body", widget: "html" }
+              - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "newsletter-en"
     label: "Newsletter (English)"
@@ -53,7 +53,7 @@ collections:
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Date", name: "date", widget: "datetime" }
-              - { label: "Body", name: "body", widget: "html" }
+              - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "newsletter-ar"
     label: "Newsletter (Arabic)"
@@ -68,4 +68,4 @@ collections:
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Date", name: "date", widget: "datetime" }
-              - { label: "Body", name: "body", widget: "html" }
+              - { label: "Body", name: "body", widget: "markdown" }
