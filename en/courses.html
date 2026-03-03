@@ -36,16 +36,16 @@
                             <script>
                                 let start = 1;
                                 let margin
-                                fetch('/data.json').then(res=>res.json()).then(data=>{
+                                fetch('https://raw.githubusercontent.com/Youssef1241/tff-website/main/_data/courses-en.json').then(res=>res.json()).then(data=>{
                                     const container = document.getElementById("courses-container");
-                                    data.encourses.forEach(course => {
+                                    data.courses.forEach(course => {
                                         start? margin="me":margin="ms";
                                         container.innerHTML += `
                                     <div class="col-lg-5 col-md-6 col-sm-8 col-12 ${margin}-auto course-card-wrap mb-5">
                                         <div class="course-card mx-auto">
                                             <a href="course.html?id=${course.id}" class="stretched-link"></a>
                 
-                                                    <img src="${course.image}" class="course-image">
+                                                    <img src="${course.thumbnail}" class="course-image">
                                                     
                 
                                         </div>

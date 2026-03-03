@@ -6,8 +6,8 @@ backend:
 media_folder: "images"
 
 collections:
-  - name: "courses-en"
-    label: "Courses (English)"
+  - name: "courses"
+    label: "Courses"
     files:
       - name: "courses-en"
         label: "Courses (English)"
@@ -17,15 +17,13 @@ collections:
             name: "courses"
             widget: "list"
             fields:
+              - { label: "ID", name: "id", widget: "uuid" }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Thumbnail", name: "thumbnail", widget: "image" }
               - { label: "Price", name: "price", widget: "string" }
               - { label: "Body", name: "body", widget: "markdown" }
 
-  - name: "courses-ar"
-    label: "Courses (Arabic)"
-    files:
       - name: "courses-ar"
         label: "Courses (Arabic)"
         file: "_data/courses-ar.json"
@@ -34,14 +32,15 @@ collections:
             name: "courses"
             widget: "list"
             fields:
+              - { label: "ID", name: "id", widget: "uuid" }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Thumbnail", name: "thumbnail", widget: "image" }
               - { label: "Price", name: "price", widget: "string" }
               - { label: "Body", name: "body", widget: "markdown" }
 
-  - name: "newsletter-en"
-    label: "Newsletter (English)"
+  - name: "newsletter"
+    label: "Newsletter"
     files:
       - name: "newsletter-en"
         label: "Newsletter (English)"
@@ -51,13 +50,11 @@ collections:
             name: "issues"
             widget: "list"
             fields:
+              - { label: "ID", name: "id", widget: "uuid" }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Date", name: "date", widget: "datetime" }
               - { label: "Body", name: "body", widget: "markdown" }
 
-  - name: "newsletter-ar"
-    label: "Newsletter (Arabic)"
-    files:
       - name: "newsletter-ar"
         label: "Newsletter (Arabic)"
         file: "_data/newsletter-ar.json"
@@ -66,6 +63,7 @@ collections:
             name: "issues"
             widget: "list"
             fields:
+              - { label: "ID", name: "id", widget: "uuid" }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Date", name: "date", widget: "datetime" }
               - { label: "Body", name: "body", widget: "markdown" }
