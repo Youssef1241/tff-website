@@ -37,7 +37,7 @@
                                 const params = new URLSearchParams(window.location.search)
                                 const postId = params.get("id");
 
-                                fetch('https://raw.githubusercontent.com/Youssef1241/tff-website/main/_data/newsletter-ar.json').then(res=>res.json().then(data=>{
+                                fetch('/_data/newsletter-ar.json').then(res=>res.json().then(data=>{
                                     const post = data.issues.find(p => p.id === postId);
                                     
                                     document.getElementById("title").textContent = post.title;

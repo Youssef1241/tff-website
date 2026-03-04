@@ -34,7 +34,7 @@
                         <div class="col-12" id="post-container">
                             <script src="https://unpkg.com/marked@4.3.0/marked.min.js"></script>
                             <script>
-                                fetch('https://raw.githubusercontent.com/Youssef1241/tff-website/main/_data/newsletter-en.json').then(res=>res.json()).then(data=>{
+                                fetch('/_data/newsletter-en.json').then(res=>res.json()).then(data=>{
                                     const container = document.getElementById("post-container");
                                     data.issues.forEach(post => {
                                         let text = getTextPreview(marked.parse(post.body));

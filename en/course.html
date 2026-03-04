@@ -48,7 +48,7 @@
                                 const params = new URLSearchParams(window.location.search);
                                 const courseId = params.get("id");
                                 
-                                fetch('https://raw.githubusercontent.com/Youssef1241/tff-website/main/_data/courses-en.json')
+                                fetch('/_data/courses-en.json')
                                     .then(res => res.json())
                                     .then(data => {
                                         const course = data.courses.find(c => c.id === courseId);
@@ -57,7 +57,7 @@
                                         document.getElementById("price").textContent = course.price;
                                         document.getElementById("image").src = course.thumbnail;
                                         document.getElementById("description").innerHTML = marked.parse(course.body);
-                                        
+
                                         const bookBtn = document.getElementById("book-button");
                                         if (bookBtn) {
                                             bookBtn.href = `book-course.html?id=${courseId}`;

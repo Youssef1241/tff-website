@@ -36,7 +36,7 @@
                             <script>
                                 let start = 1;
                                 let margin
-                                fetch('https://raw.githubusercontent.com/Youssef1241/tff-website/main/_data/courses-en.json').then(res=>res.json()).then(data=>{
+                                fetch('/_data/courses-en.json').then(res=>res.json()).then(data=>{
                                     const container = document.getElementById("courses-container");
                                     data.courses.forEach(course => {
                                         start? margin="me":margin="ms";

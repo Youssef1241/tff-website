@@ -1,13 +1,3 @@
-/*
-
-TemplateMo 581 Kind Heart Charity
-
-https://templatemo.com/tm-581-kind-heart-charity
-
-*/
-
-
-
 @font-face {
     font-family: 'Metropolis';
     src: url('../fonts/Metropolis/Metropolis-Regular.woff2') format('woff2'),
@@ -26,7 +16,7 @@ https://templatemo.com/tm-581-kind-heart-charity
     font-display: swap;
 }
 
-@font-face {
+@font-face { 
     font-family: 'Metropolis';
     src: url('../fonts/Metropolis/Metropolis-SemiBold.woff2') format('woff2'),
         url('../fonts/Metropolis/Metropolis-SemiBold.woff') format('woff');
