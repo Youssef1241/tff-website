@@ -46,14 +46,27 @@ window.addEventListener('load', function () {
     jQuery('.navbar').sticky({ topSpacing: 0 });
   }
 
-  const currentPath = window.location.pathname;
+  // Normalize paths so it works both locally and when deployed under a subfolder
+  function normalizePath(path) {
+    if (!path) return path;
+    // Ensure leading slash
+    if (!path.startsWith('/')) path = '/' + path;
+    // If it's just a folder (ends with /), assume index.html
+    if (path.endsWith('/')) path += 'index.html';
+    return path;
+  }
+
+  const currentPath = normalizePath(window.location.pathname);
+
   document.querySelectorAll('.navbar .nav-link').forEach((link) => {
     const href = link.getAttribute('href');
     if (!href || href === '#') return;
 
     try {
-      const linkPath = new URL(href, window.location.origin).pathname;
-      if (linkPath === currentPath) {
+      const linkPath = normalizePath(new URL(href, window.location.origin).pathname);
+
+      // Match either exactly or as a suffix (for cases like /subsite/en/index.html vs /en/index.html)
+      if (currentPath === linkPath || currentPath.endsWith(linkPath)) {
         link.classList.add('active');
       }
     } catch (e) {
