@@ -46,18 +46,20 @@
 
                                 <script src="https://unpkg.com/marked@4.3.0/marked.min.js"></script>
                                 <script>
-                                const params = new URLSearchParams(window.location.search);
-                                const courseId = params.get("id");
-                                
-                                fetch('/_data/courses-ar.json')
+                                    const params = new URLSearchParams(window.location.search);
+                                    const courseId = params.get("id");
+                                    const lang = "ar";
+                                    
+                                    fetch('/_data/courses.json')
                                     .then(res => res.json())
                                     .then(data => {
-                                        const course = data.courses.find(c => c.id === courseId);
+                                        const content = data.courses.find(c => c.id === courseId);
+                                        const course = content[lang];
 
                                         document.getElementById("title").textContent = course.title;
                                         document.getElementById("description").innerHTML = marked.parse(course.body);
-                                        document.getElementById("price").textContent = course.price;
-                                        document.getElementById("image").src = course.thumbnail;
+                                        document.getElementById("price").textContent = content.price;
+                                        document.getElementById("image").src = content.thumbnail;
 
                                         const bookBtn = document.getElementById("book-button");
                                         if (bookBtn) {
@@ -90,9 +92,6 @@
         <script src="/js/jquery.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
         <script src="/js/jquery.sticky.js"></script>
-        <script src="/js/click-scroll.js"></script>
-        <script src="/js/counter.js"></script>
-        <script src="/js/custom.js"></script>
         <!-- <script src="js/sideways-scroll.js"></script> -->
 
     </body>

@@ -54,13 +54,16 @@
                                 <script>
                                 const params = new URLSearchParams(window.location.search);
                                 const courseId = params.get("id");
+                                const lang = "en";
                                 
-                                fetch('/_data/courses-en.json')
+                                fetch('/_data/courses.json')
                                     .then(res => res.json())
                                     .then(data => {
-                                        const course = data.courses.find(c => c.id === courseId);
+                                        const content = data.courses.find(c => c.id === courseId);
+                                        const course = content[lang];
+
                                         document.getElementById("title").textContent = 'Book in " ' + course.title + '"' ;
-                                        document.getElementById("image").src = course.thumbnail;
+                                        document.getElementById("image").src = content.thumbnail;
                                     });
                                 </script>
 
@@ -81,8 +84,6 @@
         <script src="/js/jquery.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
         <script src="/js/jquery.sticky.js"></script>
-        <script src="/js/counter.js"></script>
-        <script src="/js/custom.js"></script>
         <!-- <script src="js/sideways-scroll.js"></script> -->
 
     </body>
