@@ -1,8 +1,12 @@
 async function loadHTML(id, file) {
-    const res = await fetch(file);
-    const text = await res.text();
-    document.getElementById(id).innerHTML = text;
-  }
+  const mount = document.getElementById(id);
+  if (!mount) return false;
+
+  const res = await fetch(file);
+  const text = await res.text();
+  mount.innerHTML = text;
+  return true;
+}
   
 
 function changeLanguage(lang){
@@ -32,30 +36,14 @@ function changeLanguage(lang){
   window.location.href  = newPath + search + hash;
 }
 
-if (window.location.pathname.includes("/en/")) {
-  loadHTML("en-navbar", "/en/navbar.html");
-  loadHTML("en-footer", "/en/footer.html");
-} else {
-  loadHTML("ar-navbar", "/ar/navbar.html");
-  loadHTML("ar-footer", "/ar/footer.html");
+function normalizePath(path) {
+  if (!path) return path;
+  if (!path.startsWith('/')) path = '/' + path;
+  if (path.endsWith('/')) path += 'index.html';
+  return path;
 }
 
-// Ensure navbar becomes sticky and highlight the active page link
-window.addEventListener('load', function () {
-  if (window.jQuery && typeof jQuery.fn.sticky === 'function') {
-    jQuery('.navbar').sticky({ topSpacing: 0 });
-  }
-
-  // Normalize paths so it works both locally and when deployed under a subfolder
-  function normalizePath(path) {
-    if (!path) return path;
-    // Ensure leading slash
-    if (!path.startsWith('/')) path = '/' + path;
-    // If it's just a folder (ends with /), assume index.html
-    if (path.endsWith('/')) path += 'index.html';
-    return path;
-  }
-
+function markActiveNavLink() {
   const currentPath = normalizePath(window.location.pathname);
 
   document.querySelectorAll('.navbar .nav-link').forEach((link) => {
@@ -64,8 +52,6 @@ window.addEventListener('load', function () {
 
     try {
       const linkPath = normalizePath(new URL(href, window.location.origin).pathname);
-
-      // Match either exactly or as a suffix (for cases like /subsite/en/index.html vs /en/index.html)
       if (currentPath === linkPath || currentPath.endsWith(linkPath)) {
         link.classList.add('active');
       }
@@ -73,5 +59,37 @@ window.addEventListener('load', function () {
       // ignore invalid URLs
     }
   });
+}
+
+function initStickyNavbarWithRetry(triesLeft = 50) {
+  // Run active-link marking even if sticky isn't available yet
+  markActiveNavLink();
+
+  const hasNavbar = document.querySelector('.navbar');
+  if (!hasNavbar) return;
+
+  const canSticky = window.jQuery && typeof jQuery.fn.sticky === 'function';
+  if (canSticky) {
+    jQuery('.navbar').sticky({ topSpacing: 0 });
+    return;
+  }
+
+  if (triesLeft > 0) {
+    setTimeout(() => initStickyNavbarWithRetry(triesLeft - 1), 100);
+  }
+}
+
+// Load navbar/footer and only then initialize sticky + active state
+const isEn = window.location.pathname.includes("/en/");
+const navbarPromise = isEn
+  ? loadHTML("en-navbar", "/en/navbar.html")
+  : loadHTML("ar-navbar", "/ar/navbar.html");
+const footerPromise = isEn
+  ? loadHTML("en-footer", "/en/footer.html")
+  : loadHTML("ar-footer", "/ar/footer.html");
+
+Promise.all([navbarPromise, footerPromise]).finally(() => {
+  // Wait one tick so DOM is updated, then init (and retry until scripts are ready)
+  setTimeout(() => initStickyNavbarWithRetry(), 0);
 });
 
