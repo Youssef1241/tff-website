@@ -40,11 +40,11 @@
 :root {
   --white-color:                  #ffffff;
   --primary-color:                #6fbf44;
-  --secondary-color:              #5a6f80;
+  --secondary-color:              #405a41;
   /* potential secondary color from logo gray #abacb1 */
   --section-bg-color:             #fff5e7;
-  --site-footer-bg-color:         #44525d;
-  --custom-btn-bg-color:          #597081;
+  --site-footer-bg-color:         #314231;
+  --custom-btn-bg-color:          #5a805b;
   --custom-btn-bg-hover-color:    #6fbf44;
   --dark-color:                   #000000;
   --p-color:                      #717275;
