@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>نحو عائلة فاعلة</title>
+        <link rel="icon" type="image/x-icon" href="/images/tff-logo.png">
+
+        <!-- CSS FILES -->        
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/bootstrap-icons.css" rel="stylesheet">
+        <link href="/css/tff-stylesheet.css" rel="stylesheet">
+
+
+</head>
+    
+<body>
+<div id="ar-navbar"></div>
+
+            <section class="section-padding">
+                <div class="container-fluid px-5">
+                    <div class="row"">
+
+                        <div class="col-lg-10 col-12 text-right ms-auto me-5 header-section">
+                            <h2>اقاويل</h2>
+                        </div>
+
+                        <div class="col-12 my-3 mb-5">
+                            <hr class="divider">
+                    </div>
+                        <div class="col-12">
+                            <div class="masonry">
+                            <script>
+                                fetch('/_data/quotes.json')
+                                .then(r => r.json())
+                                .then(data => {
+                                    const container = document.querySelector('.masonry');
+                                    data.quotes.forEach(url => {
+                                    const img = document.createElement('img');
+                                    img.src = url;
+                                    container.appendChild(img);
+                                    });
+                                });
+                            </script>
+                            </div>
+                        </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            
+        </main>
+
+        <div id="ar-footer"></div>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="/js/include.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/jquery.sticky.js"></script>
+        <!-- <script src="js/sideways-scroll.js"></script> -->
+
+    </body>
+</html>

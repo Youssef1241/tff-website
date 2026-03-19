@@ -1552,6 +1552,28 @@ blockquote::before {
 }
 
 /*---------------------------------------
+  QUOTES PAGE
+-----------------------------------------*/
+/* .quotes-image{
+  max-width:25rem;
+  height: auto;
+  border-radius: 10%;
+  margin: 1px;
+} */
+
+.masonry {
+  columns: 3;
+  column-gap: 12px;
+}
+
+.masonry img {
+  width: 100%;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  break-inside: avoid;
+}
+
+/*---------------------------------------
   ABOUT US PAGE
 -----------------------------------------*/
 
