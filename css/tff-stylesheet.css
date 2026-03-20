@@ -1591,6 +1591,55 @@ blockquote::before {
 width : 25%;
 }
 
+/*---------------------------------------
+  EVENTS PAGE
+-----------------------------------------*/
+
+.events-wrap{
+  column-count: 2;
+}
+
+
+/* Event card: left image clipped by wrapper radius */
+.event-card-wrapper-event-card{
+  position: relative; /* needed for absolute image positioning */
+  border-radius: 3rem;
+}
+
+.event-card-wrapper-event-card {
+  position: relative;
+  border-radius: 3rem;
+  overflow: hidden; /* Ensures children (like the image) are clipped to border radius */
+}
+
+.event-card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 150px;            /* Make sure the image width is consistent */
+  object-fit: cover;       /* Safely fills the container and is clipped */
+  border-radius: 0;        /* No inner radius needed, parent clips it */
+  display: block;
+  z-index: 1;
+  /* Remove overflow here – it's only needed on the parent */
+}
+
+/* Make the text sit to the right of the image */
+.event-card-content{
+  margin: 0;
+  padding: 2rem;
+  padding-left: calc(2rem + 150px);
+  position: relative;
+}
+
+.event-card{
+
+  border-radius: 3rem;
+  
+  box-shadow: 0 1rem 4rem rgba(0, 105, 14, 0.24);
+  
+}
 
 /*---------------------------------------
   SITE FOOTER              
