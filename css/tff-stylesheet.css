@@ -1733,6 +1733,10 @@ width : 25%;
     font-size: 20px;
   }
 
+  .masonry {
+     columns: 2;
+  }
+
 }
 
 @media screen and (min-width: 1600px) {
@@ -2037,5 +2041,10 @@ width : 25%;
   .donate-form {
     padding: 25px;
   }
+
+  .masonry {
+     columns: 1;
+   }
+  
 }
 
