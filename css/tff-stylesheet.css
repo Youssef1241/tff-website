@@ -1486,6 +1486,16 @@ blockquote::before {
   background-color: var(--custom-btn-bg-color);
 }
 
+.embed-video-wrap {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: center;
+   gap:1%;
+}
+
+.embed-video-wrap iframe{
+  margin-bottom:1rem;
+}
 /*---------------------------------------
   BOOK COURSE PAGE
 -----------------------------------------*/
@@ -1703,12 +1713,18 @@ width : 25%;
   RESPONSIVE STYLES               
 -----------------------------------------*/
 @media screen and (max-width: 767px) {
-  .header-section {
+  /* .header-section {
     margin-right: auto;
     margin-left: auto;
     text-align: center !important;
   }
 
+  #header-section-id{
+    margin-right: auto;
+    margin-left: auto;
+
+    text-align: center !important;
+  } */
   .review-section {
     padding: 2rem 1rem;
   }

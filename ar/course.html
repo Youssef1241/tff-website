@@ -25,7 +25,7 @@
                 <div class="container-fluid px-5">
                     <div class="row"">
 
-                        <div class="col-lg-10 col-12 text-right ms-auto me-5 header-section">
+                        <div class="col-lg-10 col-12 text-right ms-auto me-5 header-section" id="header-section-id">
                             <h2 id="title"></h2>
                         </div>
 
@@ -38,9 +38,11 @@
                                 <div class="single-course-wrapper mx-auto mb-5">
                                     <img class="single-course-image" id="image">
                                 </div>
-
-                                <p class="course-description mx-auto mb-5" id="description">
+                                <div class="embed-video-wrap" id="embed-video">
                                     
+                                </div>
+                                <p class="course-description mx-auto mb-5 mt-3" id="description">
+                                        
                                 </p>
                                 <p class="mx-auto text-center">السعر: <strong id="price"></strong> ج.م</p>
 
@@ -57,6 +59,11 @@
                                         const course = content[lang];
 
                                         document.getElementById("title").textContent = course.title;
+                                        const embedVideo = document.getElementById("embed-video");
+                                        console.log(content.video_url);
+                                        content.video_url.forEach(url =>{
+                                            embedVideo.innerHTML += url
+                                        });
                                         document.getElementById("description").innerHTML = marked.parse(course.body);
                                         document.getElementById("price").textContent = content.price;
                                         document.getElementById("image").src = content.thumbnail;
