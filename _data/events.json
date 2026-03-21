@@ -1,0 +1,149 @@
+{
+  "events": [
+    {
+      "title": "التطور الجنسي",
+      "date": "Jun 3rd, 2017",
+      "imgURL": "/images/events/sexdev.jpg"
+    },
+    {
+      "title": "كيفية تعزيز احترام الذات لابنك",
+      "date": "Apr 17th, 2017",
+      "imgURL": "/images/events/selfesteem.jpg"
+    },
+    {
+      "title": "تمكين المرأة",
+      "date": "Mar 27th, 2017",
+      "imgURL": "/images/events/woman.jpg"
+    },
+    {
+      "title": "مشاكل الأخوات اليومية",
+      "date": "Mar 13th, 2017",
+      "imgURL": "/images/events/siblings.jpg"
+    },
+    {
+      "title": "كورس التعامل مع المراهق",
+      "date": "Mar 6th, 2021",
+      "imgURL": "/images/courses/online-teens-resized.jpg"
+    },
+    {
+      "title": "المراهقين",
+      "date": "Jun 17th, 2017",
+      "imgURL": "/images/events/teenagers.jpg"
+    },
+    {
+      "title": "لكل اب او ام بيكافح لوحده في رحلة التربية",
+      "date": "Mar 24th, 2017",
+      "imgURL": "/images/events/singleparents.jpg"
+    },
+    {
+      "title": "ضغط الأقران",
+      "date": "Apr 6th, 2017",
+      "imgURL": "/images/events/peers.jpg"
+    },
+    {
+      "title": "يوم للجدات",
+      "date": "Mar 20th, 2017",
+      "imgURL": "/images/events/grandmothers.jpg"
+    },
+    {
+      "title": "كيفية تعزيز احترام الذات لابنك",
+      "date": "Apr 17th, 2017",
+      "imgURL": "/images/events/selfesteem.jpg"
+    },
+    {
+      "title": "التنمر",
+      "date": "Feb 15th, 2017",
+      "imgURL": "/images/events/bully.jpg"
+    },
+    {
+      "title": "ذهن المراهق",
+      "date": "Feb 1st, 2017",
+      "imgURL": "/images/events/teenager.jpg"
+    },
+    {
+      "title": "كورس التربية الاساسية",
+      "date": "Dec 10th, 2016",
+      "imgURL": "/images/courses/online-teens-resized.jpg"
+    },
+    {
+      "title": "Your child expo",
+      "date": "Dec 3rd, 2016",
+      "imgURL": "/images/events/expo.jpg"
+    },
+    {
+      "title": "يوم للامهات",
+      "date": "Oct 24th, 2016",
+      "imgURL": "/images/events/mothers.jpg"
+    },
+    {
+      "title": "Siblings Workshop",
+      "date": "Jun 20th, 2020", 
+      "imgURL": "/images/tff-logo.jpeg"
+    },
+    {
+      "title": "كورس التطور الجنسي",
+      "date": "Apr 9th, 2016",
+      "imgURL": "/images/events/sexdev2.jpg"
+    },
+    {
+      "title": "يوم للامهات (انا مش بس ام)",
+      "date": "Mar 19th, 2016",
+      "imgURL": "/images/events/mothers2.jpg"
+    },
+    {
+      "title": "يوم الجدات",
+      "date": "Mar 31th, 2016", 
+      "imgURL": "/images/events/grandmothers2.jpg"
+    },
+    {
+      "title": "كورس التربية الاساسية",
+      "date": "May 12th, 2016", 
+      "imgURL": "/images/events/bp.jpg"
+    },
+    {
+      "title": "يوم الامهات",
+      "date": "Mar 1st, 2014",
+      "imgURL": "/images/tff-logo.jpeg"
+    },
+    {
+      "title": "دورة تدريبية لتربية الابناء في سن المراهقة(سن 10 الي 18 سنة)",
+      "date": "Mar 12th, 2015",
+      "imgURL": "/images/events/teenagers3.jpg"
+    },
+    {
+      "title": "يوم للامهات",
+      "date": "Dec 28th, 2013",
+      "imgURL": "/images/events/mothers.jpg"
+    },
+    {
+      "title": "كورس التطور الجنسي",
+      "date": "Oct 22th, 2016", 
+      "imgURL": "/images/events/sexdev.jpg"
+    },
+    {
+      "title": "كورس التربية الاساسية للأباء والامهات (الطرق المختلفة للتأديب و المشاكل بين الإخوة/الأخوات)",
+      "date": "Nov 19th, 2016",
+      "imgURL": "/images/events/discipline.jpg"
+    },
+    {
+      "title": "العند",
+      "date": "Dec 5th, 2016",
+      "imgURL": "/images/events/stubborness.jpg"
+    },
+    {
+      "title": "انواع شخصيات الاطفال",
+      "date": "Jan 23th, 2017", 
+      "imgURL": "/images/events/personalities.jpg"
+    },
+    {
+      "title": "نوع الاهالي التي يحتاجها المراهقين",
+      "date": "Feb 6th, 2017", 
+      "imgURL": "/images/events/teenagers4.jpg"
+    },
+    {
+      "title": "مبادئ لتربية الاساسية",
+      "date": "Sep 1st, 2017", 
+      "imgURL": "/images/events/parenting.jpg"
+    }
+  ]
+}

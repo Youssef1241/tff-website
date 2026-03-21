@@ -1590,26 +1590,41 @@ blockquote::before {
 .embed-map{
 width : 25%;
 }
+*{
+  /* outline: 1px  black solid; */
+}
 
 /*---------------------------------------
   EVENTS PAGE
 -----------------------------------------*/
 
-.events-wrap{
-  column-count: 2;
+.events-wrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 1rem;
+  max-width: 80%;
+  /* width: 100%; */
+  margin: 0 auto;
 }
 
-
-/* Event card: left image clipped by wrapper radius */
-.event-card-wrapper-event-card{
-  position: relative; /* needed for absolute image positioning */
-  border-radius: 3rem;
-}
 
 .event-card-wrapper-event-card {
+  justify-content: center;
+  align-items: center;
   position: relative;
   border-radius: 3rem;
-  overflow: hidden; /* Ensures children (like the image) are clipped to border radius */
+  overflow: hidden;
+  box-shadow: 0 1rem 4rem rgba(0, 105, 14, 0.24);
+  /* max-width: 75%;; */
+  /* height:100%; */
+  width: 100%;
+}
+
+.event-card-wrapper-event-card h3{
+  color: #f89635;
 }
 
 .event-card-image {
@@ -1617,7 +1632,7 @@ width : 25%;
   top: 0;
   left: 0;
   height: 100%;
-  width: 150px;            /* Make sure the image width is consistent */
+  width: 15rem;            /* Make sure the image width is consistent */
   object-fit: cover;       /* Safely fills the container and is clipped */
   border-radius: 0;        /* No inner radius needed, parent clips it */
   display: block;
@@ -1631,6 +1646,7 @@ width : 25%;
   padding: 2rem;
   padding-left: calc(2rem + 150px);
   position: relative;
+  height:100%;
 }
 
 .event-card{
@@ -1774,9 +1790,75 @@ width : 25%;
 
     text-align: center !important;
   } */
+  *{
+    outline: 1px red solid;
+  }
+
+  .events-wrap {
+    grid-template-columns: 1fr;
+  }
   .review-section {
     padding: 2rem 1rem;
   }
+
+.events-wrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 1rem;
+  max-width: 80%;
+  /* width: 100%; */
+  margin: 0 auto;
+}
+
+
+.event-card-wrapper-event-card {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 3rem;
+  overflow: hidden;
+  box-shadow: 0 1rem 4rem rgba(0, 105, 14, 0.24);
+  /* max-width: 75%;; */
+  /* height:100%; */
+  width: 100%;
+}
+
+.event-card-wrapper-event-card h3{
+  color: #f89635;
+}
+
+.event-card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 15rem;            /* Make sure the image width is consistent */
+  object-fit: cover;       /* Safely fills the container and is clipped */
+  border-radius: 0;        /* No inner radius needed, parent clips it */
+  display: block;
+  z-index: 1;
+  /* Remove overflow here – it's only needed on the parent */
+}
+
+/* Make the text sit to the right of the image */
+.event-card-content{
+  margin: 0;
+  padding: 2rem;
+  padding-left: calc(2rem + 150px);
+  position: relative;
+  height:100%;
+}
+
+.event-card{
+
+  border-radius: 3rem;
+  
+  box-shadow: 0 1rem 4rem rgba(0, 105, 14, 0.24);
+  
+}
 
   .review-wrapper {
     flex-direction: column;

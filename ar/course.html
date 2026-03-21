@@ -60,10 +60,12 @@
 
                                         document.getElementById("title").textContent = course.title;
                                         const embedVideo = document.getElementById("embed-video");
-                                        console.log(content.video_url);
+                                        if (content.video_url != undefined) {
                                         content.video_url.forEach(url =>{
-                                            embedVideo.innerHTML += url
+                                            embedVideo.innerHTML += url;
                                         });
+                                        }
+                                        
                                         document.getElementById("description").innerHTML = marked.parse(course.body);
                                         document.getElementById("price").textContent = content.price;
                                         document.getElementById("image").src = content.thumbnail;
