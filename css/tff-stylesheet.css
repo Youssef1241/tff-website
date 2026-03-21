@@ -678,7 +678,34 @@ strong {
   min-height: 300px;
 }
 
+#quotes-slide .carousel-item {
+  /* height: 680px; */
+  /* max-height: 50%;
+  max-width: 50%; */
+  min-height: 300px;
+}
+
+#quotes-slide{
+  max-width: 50%;
+  max-height: 50%;
+  /* width: 2rem; */
+}
+
 #hero-slide .carousel-caption {
+  background: var(--white-color);
+  clip-path: polygon(100% 100%, 100% 150px, 0 100%);
+  color: var(--secondary-color);
+  top: 1px;
+  bottom: -1px;
+  right: 0;
+  left: auto;
+  text-align: right;
+  min-width: 680px;
+  min-height: 680px;
+  padding: 100px 100px 50px 100px;
+}
+
+#quotes-slide .carousel-caption {
   background: var(--white-color);
   clip-path: polygon(100% 100%, 100% 150px, 0 100%);
   color: var(--secondary-color);
@@ -706,6 +733,19 @@ strong {
 }
 
 #hero-slide .carousel-indicators {
+  margin-right: 0;
+  margin-left: 22px;
+  justify-content: inherit;
+}
+
+#quotes-slide .carousel-indicators-wrap {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+#quotes-slide .carousel-indicators {
   margin-right: 0;
   margin-left: 22px;
   justify-content: inherit;
@@ -1903,6 +1943,11 @@ width : 25%;
     height: 100%;
     object-fit: cover;
   }
+
+  #quotes-slide .carousel-image {
+  height: 100%;
+  object-fit: fill;
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -1978,6 +2023,9 @@ width : 25%;
     height: inherit;
   }
 
+  #quotes-slide .carousel-item {
+    height: inherit;
+  }
   .carousel-control-prev {
     left: 12px;
   }
@@ -2106,6 +2154,25 @@ width : 25%;
     min-height: inherit;
   }
 
+  #quotes-slide .carousel-item,
+  .carousel-image {
+    min-height: 200px;
+  }
+  
+  #quotes-slide .carousel-image{
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+
+  }
+
+  #quotes-slide .carousel-caption {
+    clip-path: polygon(100% 100%, 100% 100px, 0 100%);
+    padding-right: 50px;
+    min-width: inherit;
+    min-height: inherit;
+  }
+
   .course-card{
     border-radius: 2.5rem;
   }
@@ -2149,6 +2216,10 @@ width : 25%;
     padding-bottom: 30px;
   }
 
+  #quotes-slide .carousel-caption {
+    min-width: inherit;
+    padding-bottom: 30px;
+  }
   .carousel-control-next-icon, 
   .carousel-control-prev-icon {
     width: 45px;
