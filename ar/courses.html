@@ -25,7 +25,7 @@
                 <div class="container-fluid px-5">
                     <div class="row"">
 
-                        <div class="col-lg-10 col-12 text-right ms-auto me-5 header-section">
+                        <div class="col-lg-10 col-12 header-section">
                             <h2>الكورسات</h2>
                         </div>
 
@@ -36,15 +36,12 @@
                             <div class="row mt-5 me-5 ms-5" id="courses-container">
                             <script>
                                 const lang = "ar";
-                                let start = 1;
-                                let margin
                                 fetch('/_data/courses.json').then(res=>res.json()).then(data=>{
                                     const container = document.getElementById("courses-container");
                                     data.courses.forEach(content => {
                                         const course = content[lang];
-                                        start? margin="ms":margin="me";
                                         container.innerHTML += `
-                                    <div class="col-lg-5 col-md-6 col-sm-8 col-12 ${margin}-auto course-card-wrap mb-5">
+                                    <div class="col-lg-5 col-md-6 col-sm-8 col-12 mx-auto course-card-wrap">
                                         <div class="course-card mx-auto">
                                             <a href="course.html?id=${content.id}" class="stretched-link"></a>
                 
@@ -57,12 +54,6 @@
                                         </div>
                                     </div>
                                         `;
-                                    if(start===0){
-                                        start = 1;
-                                    }
-                                    else{
-                                        start = 0;
-                                    }
                                     });
                                 })
                             </script>

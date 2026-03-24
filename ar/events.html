@@ -25,7 +25,7 @@
                 <div class="container-fluid px-5">
                     <div class="row"">
 
-                        <div class="col-lg-10 col-12 text-right ms-auto me-5 header-section">
+                        <div class="col-lg-10 col-12 header-section">
                             <h2>حاجات عملناها</h2>
                         </div>
 
@@ -41,8 +41,8 @@
                             .then(data => {
                                 data.events.forEach(event => {
                                 document.getElementById('events-wrap').innerHTML += `<div class="event-card-wrapper-event-card">
-                                    <img src="${event.imgURL}" alt="Event Logo" class="img-fluid float-start me-3 mb-2 event-card-image" style="max-width:150px;">
-                                        <div class="event-card event-card-content">
+                                    <img src="${event.imgURL}" alt="Event Logo" class="event-card-image">
+                                        <div class="event-card-content">
                                             <h3>${event.title}</h3>
                                             <small><i class="bi bi-clock ms-2"></i><i>${event.date}</i></small>
                                         </div>

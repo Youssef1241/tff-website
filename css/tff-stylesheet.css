@@ -273,6 +273,8 @@ strong {
 
 .header-section{
   max-width: fit-content;
+  text-align: center;
+  margin-right:3rem;
 }
 
 /*---------------------------------------
@@ -1471,6 +1473,17 @@ blockquote::before {
   overflow-wrap:normal;
 }
 
+.course-card-wrap{
+  margin-bottom: 5rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.3); /* Dark circle background */
+    border-radius: 50%;
+    background-size: 60%;
+}
+
 /*---------------------------------------
   SINGLE COURSE PAGE
 -----------------------------------------*/
@@ -1561,9 +1574,7 @@ blockquote::before {
     box-shadow: 0 1rem 4rem rgba(0, 105, 14, 0.24);
     
 }
-.course-form{
-  /* margin: 5rem 10rem; */
-}
+
 
 /*---------------------------------------
   BLOG PAGE
@@ -1634,9 +1645,7 @@ blockquote::before {
 .embed-map{
 width : 25%;
 }
-*{
-  /* outline: 1px  black solid; */
-}
+
 
 /*---------------------------------------
   EVENTS PAGE
@@ -1644,54 +1653,74 @@ width : 25%;
 
 .events-wrap {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
-  align-items: flex-start;
+  grid-template-columns: 1fr; /* Default to 1 column for mobile */
   gap: 2rem;
   padding: 1rem;
-  max-width: 80%;
-  /* width: 100%; */
   margin: 0 auto;
 }
 
 
 .event-card-wrapper-event-card {
-  justify-content: center;
-  align-items: center;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  /* align-items: center; */
   position: relative;
-  border-radius: 3rem;
+  border-radius: 2rem;
   overflow: hidden;
   box-shadow: 0 1rem 4rem rgba(0, 105, 14, 0.24);
   /* max-width: 75%;; */
   /* height:100%; */
+  /* min-height:10rem; */
   width: 100%;
+  
 }
 
+*{
+  outline: 1px solid red;
+}
 .event-card-wrapper-event-card h3{
   color: #f89635;
 }
+
+.event-card-wrapper-event-card i,small{
+  min-width: 50rem;
+}
+
+
 
 .event-card-image {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
-  width: 15rem;            /* Make sure the image width is consistent */
+  width: 30%;  
+  min-width:80px;
   object-fit: cover;       /* Safely fills the container and is clipped */
   border-radius: 0;        /* No inner radius needed, parent clips it */
   display: block;
   z-index: 1;
+  flex-shrink: 0;
   /* Remove overflow here – it's only needed on the parent */
 }
 
 /* Make the text sit to the right of the image */
 .event-card-content{
+  flex-grow: 1;;
+  /* max-width: 120%; */
+  max-width: 70%;
   margin: 0;
   padding: 2rem;
   padding-left: calc(2rem + 150px);
   position: relative;
-  height:100%;
+  text-align: right;
 }
+
+.event-card-content small{
+  flex-shrink: nowrap;
+  display: block;
+}
+
 
 .event-card{
 
@@ -1699,6 +1728,131 @@ width : 25%;
   
   box-shadow: 0 1rem 4rem rgba(0, 105, 14, 0.24);
   
+}
+
+
+/*---------------------------------------
+  BOOKS
+-----------------------------------------*/
+
+/* *{
+  outline: 1px black solid;
+} */
+
+.book-div{
+  padding: 0 10%;
+}
+
+.book-card-wrap{
+      background: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 2rem;
+      box-shadow: 0 1rem 4rem rgba(0, 105, 14, 0.24);
+      padding: 3rem 3rem 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: right;
+      transition: all 0.8s;
+      position: relative;
+      height: 100%;
+      min-width:400px;
+}
+
+.book-card-wrap:hover {
+  box-shadow: 0 12px 36px rgba(26,18,9,0.18);
+}
+
+.book-image {
+  width: 100%;
+  height:100%;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid rgba(184,137,42,0.2);
+}
+
+  .book-text h5 {
+    font-family: 'Amiri', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a1209;
+  }
+
+  .book-text h6 {
+    font-size: 0.9rem;
+    color: #f89635;
+    font-weight: 400;
+  }
+
+  .book-text p {
+    font-size: 0.88rem;
+    color: #4a3c28;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .book-text {
+    width: 100%;
+    border-bottom: 1px solid #f6b06a8d;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .books-button {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 1rem;
+    transition: all 0.22s ease;
+    text-decoration: none;
+
+    background: var(--custom-btn-bg-color);
+    border: none;
+    border-radius: var(--border-radius-large);
+    color: var(--white-color);
+    font-size: var(--p-font-size);
+    font-weight: var(--font-weight-semibold);
+    transition: all 0.3s;
+    margin-bottom: 0;
+
+  }
+
+  .books-button:hover{
+    background: var(--custom-btn-bg-hover-color);
+    border-color: transparent;
+  }
+
+.sample-button{
+  background: #ffffff00;
+  border: 2px var(--custom-btn-bg-color) solid;
+  border-radius: var(--border-radius-large);
+  color: var(--custom-btn-bg-color);
+  font-size: var(--p-font-size);
+  font-weight: var(--font-weight-semibold);
+  transition: all 0.3s;
+  margin-bottom: 0;
+}
+
+.sample-button:hover,.sample-button:focus,.sample-button:active{
+  color: white;
+  background-color: var(--custom-btn-bg-color);
+}
+
+.book-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 100%;
+  }
+
+
+
+.carousel-control-prev-books {
+  left: 2%;
+}
+
+.carousel-control-next-books{
+  right:2%;
 }
 
 /*---------------------------------------
@@ -1821,87 +1975,44 @@ width : 25%;
 /*---------------------------------------
   RESPONSIVE STYLES               
 -----------------------------------------*/
+@media screen and (min-width: 767px) {
+
+.events-wrap {
+  
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 85%;
+}
+
+
+}
+
+
 @media screen and (max-width: 767px) {
-  /* .header-section {
+  .header-section {
     margin-right: auto;
     margin-left: auto;
     text-align: center !important;
   }
 
-  #header-section-id{
+  /*#header-section-id{
     margin-right: auto;
     margin-left: auto;
 
     text-align: center !important;
   } */
-  *{
-    outline: 1px red solid;
-  }
 
-  .events-wrap {
-    grid-template-columns: 1fr;
-  }
+
   .review-section {
     padding: 2rem 1rem;
   }
 
-.events-wrap {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
-  align-items: flex-start;
-  gap: 2rem;
-  padding: 1rem;
-  max-width: 80%;
-  /* width: 100%; */
-  margin: 0 auto;
-}
 
-
-.event-card-wrapper-event-card {
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  border-radius: 3rem;
-  overflow: hidden;
-  box-shadow: 0 1rem 4rem rgba(0, 105, 14, 0.24);
-  /* max-width: 75%;; */
-  /* height:100%; */
-  width: 100%;
-}
 
 .event-card-wrapper-event-card h3{
-  color: #f89635;
+  font-size: 1rem;;
 }
-
-.event-card-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 15rem;            /* Make sure the image width is consistent */
-  object-fit: cover;       /* Safely fills the container and is clipped */
-  border-radius: 0;        /* No inner radius needed, parent clips it */
-  display: block;
-  z-index: 1;
-  /* Remove overflow here – it's only needed on the parent */
-}
-
-/* Make the text sit to the right of the image */
 .event-card-content{
-  margin: 0;
-  padding: 2rem;
-  padding-left: calc(2rem + 150px);
-  position: relative;
-  height:100%;
-}
-
-.event-card{
-
-  border-radius: 3rem;
-  
-  box-shadow: 0 1rem 4rem rgba(0, 105, 14, 0.24);
-  
+  max-width: 120%;
 }
 
   .review-wrapper {
@@ -1922,6 +2033,15 @@ width : 25%;
 
   .blog-card h3{
     font-size: 20px;
+  }
+
+  .book-card-wrap{
+    min-width:auto;
+    margin:0;
+    width:100%;
+  }
+  .book-div{
+    padding:0;
   }
 
 }
