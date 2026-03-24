@@ -1536,6 +1536,10 @@ blockquote::before {
 .embed-video-wrap iframe{
   margin-bottom:1rem;
 }
+.embed-video-wrap img{
+  max-height:30rem;
+    margin-bottom:1rem;
+}
 /*---------------------------------------
   BOOK COURSE PAGE
 -----------------------------------------*/
