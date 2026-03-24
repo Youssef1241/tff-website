@@ -60,7 +60,7 @@
       "id": "3b55fc28-ca85-4ea5-8cae-81a8b7ec235a",
       "thumbnail": "/images/kabaran_cleanup.jpeg",
       "price": "الموديول الاول 3000، الموديول الثاني 6000، الموديول الثالث 3000",
-      "video_url": "",
+      "video_url": ["<img src=\"/images/courses/kabaran2.jpeg\">","<img src=\"/images/courses/kabaran3.jpeg\">"],
       "en": {
         "title": "Personal Growth (Kabaran)",
         "body": "# The Personal Growth (Kabaran) Course\n\nThe Personal Growth (Kabaran) Course consists of 3 parts. Each module or part lasts 6 weeks.\n\nThe goal is to work on and develop myself in different areas of change.\n\n- Module 1: The goal is to work on myself in my different aspects.\n- Module 2: My relationship with my new family: spouse and children at their different stages.\n- Module 3: My relationship with my flaws and personal struggles, such as boundaries, anger, commitment to my goals, reading, and sports.\n\n***\n\n## Details\n\nSimplified interactive instruction for half an hour, followed by a group discussion. A book for reading and participation at the end of the level. Interactive assignments.\n\nThe group meets from 10 AM to 12 PM every week for a month and a half.\n\n***\n\n## Module 1\n\nThe goal is to work on myself in my different aspects, such as my relationship with myself: how well I know and understand myself and how capable I am of dealing with myself... and my relationship with my family: how much it affects me and how much I see them. And working in this area.\n\n### Details\n\n- Simplified interactive instruction for half an hour\n- Then an interactive group\n- The book \"Types of Mothers\" or \"Save the Inner Child\"\n- Interactive assignments\n\n### Topics\n\n- What is growing up with myself?\n- My thoughts, feelings, and behavior now: An outside-the-box perspective\n- The mother within me\n- The type of self-talk I have\n- How I see myself and how I deal with myself when I make a mistake\n\n### Cost: 3000 EGP\n\n***\n\n## Module 2 (12 weeks)\n\nMy relationship with my new family: husband and children at their different stages.\n\n### 6 weeks about my relationship with my husband\n\n- What is marriage and the role of the baggage we brought with us?\n- Marriage seasons and how to deal with them\n- Communication\n- Different types of love\n- Practical skills\n\n### Children and teenagers\n\n- What is parenting?\n- Different age needs\n- Love and boundaries 1\n- Love and boundaries 2\n- Dealing with problems Common Problems Among Children\n- Dealing with Common Problems Among Teenagers\n\n### Cost: 6000 EGP\n\n***\n\n## Module 3 (6 weeks)\n\nMy Relationship with My Flaws and Personal Conflicts, such as Boundaries, Anger, Commitment to My Goals, Reading, and Sports.\n\n### Topics\n\n- Boundaries 1\n- Boundaries 2\n- Anger 1\n- Anger 2\n- How to Live\n- Skills to Help You on Your Recovery Journey\n\n### Cost: 3000 EGP\n\n***\n\n> Currently, registration is open for Module 1 only. Dates: November 10th, 17th, and 24th"
@@ -90,11 +90,11 @@
       "price": "TBD",
       "video_url": "",
       "en": {
-        "title": "مجموعات الامهات للاطفال تحت 10 سنين",
+        "title": "Mothers Groups for Children Under 10",
         "body": "Placeholder"
       },
       "ar": {
-        "title": "Mothers Groups for Children Under 10",
+        "title": "مجموعات الامهات للاطفال تحت 10 سنين",
         "body": "Placeholder"
       }
     },
