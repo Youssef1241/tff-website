@@ -277,6 +277,9 @@ strong {
   margin-right:3rem;
 }
 
+/* .test{
+  outline: 1px solid black;
+} */
 /*---------------------------------------
   REVIEWS SECTION
 -----------------------------------------*/
@@ -845,6 +848,7 @@ strong {
 
 .custom-text-block {
   padding: 60px 40px;
+  margin-bottom: 1rem;
 }
 
 .about-row{
@@ -1565,16 +1569,27 @@ blockquote::before {
 }
 
 .book-course-form{
-    /* max-width: 50rem; */
-    max-width: fit-content;
-    padding: 2rem;
-    max-height: 25rem;
-    border-radius: 5rem;
-    overflow: hidden;
+    max-width: 75%;
+    /* max-width: fit-content; */
+    padding: 5%;
+    border-radius: 2rem;
+    /* overflow: hidden; */
     box-shadow: 0 1rem 4rem rgba(0, 105, 14, 0.24);
     
 }
 
+.book-course-form div{
+    max-width: 85%;
+    margin-right: auto;
+    margin-left: auto;
+    /* max-width: fit-content; */
+    /* padding: 2rem; */
+    
+}
+
+.test {
+  outline: 1px solid black;
+}
 
 /*---------------------------------------
   BLOG PAGE
@@ -1676,9 +1691,6 @@ width : 25%;
   
 }
 
-*{
-  outline: 1px solid red;
-}
 .event-card-wrapper-event-card h3{
   color: #f89635;
 }
@@ -1971,6 +1983,55 @@ width : 25%;
   color: var(--white-color);
 }
 
+/*---------------------------------------
+  WIDE CARD (FULL WIDTH)
+-----------------------------------------*/
+.wide-card {
+  width: 100%;
+  background: var(--white-color);
+  border-radius: var(--border-radius-medium);
+  box-shadow: 0 1rem 4rem rgba(0, 105, 14, 0.24);
+  padding: 2.25rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+  text-align: justify; /* RTL layout */
+  margin: 0 1%;
+}
+
+.wide-card-title {
+  margin-bottom: 0.75rem;
+}
+
+.wide-card-text {
+  color: var(--p-color);
+  line-height: 1.8;
+  font-size: var(--p-font-size);
+  margin-bottom: 1.25rem;
+  /* max-width: 70ch; */
+}
+
+.wide-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.wide-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.home-course-image{
+ border-radius: 2rem;
+ aspect-ratio: 1/1;
+}
+
+
+
 
 /*---------------------------------------
   RESPONSIVE STYLES               
@@ -2006,10 +2067,8 @@ width : 25%;
     padding: 2rem 1rem;
   }
 
-
-
 .event-card-wrapper-event-card h3{
-  font-size: 1rem;;
+  font-size: 1rem;
 }
 .event-card-content{
   max-width: 120%;
@@ -2043,6 +2102,30 @@ width : 25%;
   .book-div{
     padding:0;
   }
+
+  .custom-text-block{
+    text-align: justify;
+    margin-bottom: 1rem;
+  }
+
+  .book-course-form{
+    max-width: 100%;
+    /* max-width: fit-content; */
+    /* padding: 5%; */
+    border-radius: 2rem;
+    /* overflow: hidden; */
+    box-shadow: 0 1rem 4rem rgba(0, 105, 14, 0.24);
+    
+}
+
+.book-course-form div{
+    max-width: 85%;
+    margin-right: auto;
+    margin-left: auto;
+    /* max-width: fit-content; */
+    /* padding: 2rem; */
+    
+}
 
 }
 
@@ -2210,7 +2293,7 @@ width : 25%;
   }
 
   .about-image {
-    width: inherit;
+    width: 100%;
     height: 450px;
   }
 

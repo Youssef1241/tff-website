@@ -4,6 +4,7 @@
       "id": "70b9ebce-8be4-42c0-b026-be0f5f093487",
       "thumbnail": "/images/courses/adopted-resized.jpg",
       "price": "4000",
+      "kids": false,
       "video_url": [
         "<iframe src=\"https://www.facebook.com/plugins/video.php?height=477&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F928962206535961%2F&show_text=false&width=560&t=0\" width=\"560\" height=\"477\" style=\"border:none;overflow:hidden\" scrolling=\"no\" frameborder=\"0\" allowfullscreen=\"true\" allow=\"autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share\" allowFullScreen=\"true\"></iframe>"
       ],
@@ -20,6 +21,7 @@
       "id": "9c05e288-74c5-4efd-b486-5612b6e8a20a",
       "thumbnail": "/images/courses/online-teens-resized.jpg",
       "price": "1200",
+      "kids": true,
       "video_url": [
         "<iframe src=\"https://www.facebook.com/plugins/video.php?height=476&amp;href=https%3A%2F%2Fwww.facebook.com%2Freel%2F764053376438528%2F&amp;show_text=false&amp;width=267&amp;t=0\" width=\"267\" height=\"476\" style=\"border:none;overflow:hidden\" scrolling=\"no\" frameborder=\"0\" allowfullscreen=\"true\" allow=\"autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share\" allowFullScreen=\"true\"></iframe>",
         "<iframe src=\"https://www.facebook.com/plugins/video.php?height=476&amp;href=https%3A%2F%2Fwww.facebook.com%2Ftf.families%2Fvideos%2F24565405879766251%2F&amp;show_text=false&amp;width=267&amp;t=0\" width=\"267\" height=\"476\" style=\"border:none;overflow:hidden\" scrolling=\"no\" frameborder=\"0\" allowfullscreen=\"true\" allow=\"autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share\" allowFullScreen=\"true\"></iframe>"
@@ -37,6 +39,7 @@
       "id": "291f6832-63a3-4325-bf13-2b6203ecd030",
       "thumbnail": "/images/courses/basic-parenting.jpg",
       "price": "600",
+      "kids": true,
       "video_url": [],
       "en": {
         "title": "Basic Parenting Course for parents of children",
@@ -51,6 +54,7 @@
       "id": "236e0a91-7f9b-4229-8e6e-96812d9872fc",
       "thumbnail": "/images/courses/marriage.jpeg",
       "price": "1300 للفرد و 2500 للكابل",
+      "kids": false,
       "video_url": [],
       "en": {
         "title": "Marriage Course",
@@ -65,6 +69,7 @@
       "id": "3b55fc28-ca85-4ea5-8cae-81a8b7ec235a",
       "thumbnail": "/images/kabaran_cleanup.jpeg",
       "price": "الموديول الاول 3000، الموديول الثاني 6000، الموديول الثالث 3000",
+      "kids": false,
       "video_url": ["<img src=\"/images/courses/kabaran2.jpeg\">","<img src=\"/images/courses/kabaran3.jpeg\">"],
       "en": {
         "title": "Personal Growth (Kabaran)",
@@ -79,6 +84,7 @@
       "id": "46915ff6-2bd2-4982-a108-09f3a1d9d085",
       "thumbnail": "/images/courses/online-teens-resized.jpg",
       "price": "TBD",
+      "kids": false,
       "video_url": [],
       "en": {
         "title": "Moms Retreat",
@@ -93,6 +99,7 @@
       "id": "0315a502-5ff9-4e8d-aca1-f8254d760484",
       "thumbnail": "/images/events/siblings.jpg",
       "price": "TBD",
+      "kids": true,
       "video_url": [],
       "en": {
         "title": "Mothers Groups for Children Under 10",
@@ -107,6 +114,7 @@
       "id": "98139729-56b3-448b-bbdc-f094ccc88303",
       "thumbnail": "/images/events/teenagers4.jpg",
       "price": "TBD",
+      "kids": true,
       "video_url": [],
       "en": {
         "title": "Mothers Groups for Teenagers",

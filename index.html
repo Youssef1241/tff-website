@@ -77,11 +77,9 @@
                 </div>
             </section>
 
-
-
-            <section class="section-padding">
+            <section class="mt-5">
                 <div class="container-fluid px-5">
-                    <div class="row">
+                    <div class="row ">
 
                         <div class="col-lg-10 col-12 header-section">
                             <h2>بنقدم ايه</h2>
@@ -93,7 +91,7 @@
                         <div class="col-12">
                             <div class="row custom-gap justify-content-center">
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                                    <div class="service-card-wrap ">
+                                    <div class="service-card-wrap">
                                         
                                         <a href="/ar/courses.html" class="stretched-link"></a>
                                         <div class="custom-block service-card">
@@ -150,6 +148,92 @@
                     </div>
                 </div>
             </section>
+            <section class="section-padding">
+                <div class="container-fluid px-5">
+                    <div class="col-lg-10 col-12 header-section">
+                        <h2>اجدد منشور</h2>
+                    </div>
+                    <div class="col-12 my-3">
+                        <hr class="divider">
+                    </div>
+
+                    <div class="row mt-5 mx-auto">
+                        <div class="col-lg-10 col-12 mx-auto">
+                            <div class="wide-card test" id="latest-post">
+                                <script src="https://unpkg.com/marked@4.3.0/marked.min.js"></script>
+                                <script>
+                                    fetch('/_data/newsletter-ar.json').then(response => response.json()).then(data => {
+                                        let issueCount = data.issues.length;
+                                        let lastIssue = data.issues[issueCount - 1];
+                                        const dateObj = new Date(lastIssue.date);
+                                        const options = { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' };
+                                        let htmlText = getTextPreview(lastIssue.body, true, 500);
+                                        document.getElementById('latest-post').innerHTML += 
+                                            `
+                                            <h3 class="wide-card-title">${lastIssue.title}</h3>
+                                            <div class="wide-card-meta">
+                                                <span class="badge">منشور جديد</span>
+                                                <small id="date"><i class="bi bi-clock ms-2"></i><i>${dateObj.toLocaleString('ar-EG', options).replace(',', '')}</i></small>
+                                            </div>
+                                            <p class="wide-card-text">
+                                                ${htmlText}
+                                            </p>
+                                            <div class="wide-card-actions">
+                                                <a href="/ar/blogpost.html?id=${lastIssue.id}" class="custom-btn">اقرأ المزيد</a>
+                                            </div>
+                                            `                                        
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="section-padding">
+                <div class="container-fluid px-5">
+                    <div class="col-lg-10 col-12 header-section">
+                        <h2>اجدد كورس</h2>
+                    </div>
+                    <div class="col-12 my-3">
+                        <hr class="divider">
+                    </div>
+
+                        <div class="row test mx-auto mt-5">
+                            
+                            <div class="col-lg-9 col-md-7 col-11 col-sm-10 test mx-auto">
+                                <div class="custom-text-block" id = "latest-course">
+                                    <script>
+                                        fetch('/_data/courses.json').then(response => response.json()).then(data => {
+                                            let course = data.courses[0];
+                                            const content = course["ar"];
+                                            document.getElementById("latest-course").innerHTML += `
+                                            <h2 class="mb-0" style="font-size: 2.5rem;" >${content.title}</h2>
+                                            <br>
+                                            <p>${getTextPreview(content.body, true, 750)}</p>
+                                            <div class="wide-card-actions justify-content-center mb-5">
+                                                <a href="/ar/course.html?id=${course.id}" class="custom-btn">اقرأ المزيد</a>
+                                            </div>
+                                            `;
+                                        });
+                                    </script>
+
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-3 col-md-5 col-12 d-flex justify-content-end align-items-center">
+                                    <img src="images/courses/adopted-resized.jpg" class="home-course-image  bg-light shadow-lg img-fluid" alt="Dr. Marlene Bastawros">
+                                </div>
+                        <div class="col-12 my-3">
+                            <hr class="divider">
+                        </div>
+                                <div class="wide-card-actions test justify-content-center mt-5">
+                                    <a href="/ar/course.html?id=${course.id}" class="custom-btn">تصفح كل الكورسات</a>
+                                </div>
+                            </div>
+                    </div>
+            </section>
 
             <section class="section-padding section-bg">
                 <div class="container-fluid px-5">
@@ -158,28 +242,6 @@
                     </div>
                     <div class="row">
                         
-                        <div class="container">
-
-                        </div>
-                        <!-- <section class="review-section">
-                            <div class="review-track" id="reviewTrack">
-                                <div class="review-card">
-                                    <h3>
-                                        Super Good
-                                    </h3>
-                                </div>
-                                <div class="review-card">
-                                    <h3>
-                                        Very Nice
-                                    </h3>
-                                </div>
-                                <div class="review-card">
-                                    <h3>
-                                        Perfect
-                                    </h3>
-                                </div>
-                        </section> -->
-
                         <section class="review-section">
                             <div class="review-wrapper">
                                 <div class="review-card">
@@ -209,12 +271,12 @@
 
 
             <section class="about-section section-padding">
-                <div class="container">
+                <div class="container test justify-content-center align-items-center">
                     
 
-                        <div class="row g-5 align-items-center justify-content-center about-row">
+                        <div class="row g-5 align-items-center justify-content-center about-row mx-auto test">
                             
-                            <div class="col-lg-5 col-md-7 col-11 col-sm-10 me-auto">
+                            <div class="col-lg-5 col-md-7 col-11 col-sm-10 mx-auto">
                                 <div class="custom-text-block">
                                     <h2 class="mb-0">د. مارلين بسطوروس</h2>
                                     
@@ -252,6 +314,7 @@
         <script src="/js/jquery.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
         <script src="/js/jquery.sticky.js"></script>
+        <script src="/js/clean-posts.js"></script>
         <!-- <script src="js/sideways-scroll.js"></script> -->
 
     </body>

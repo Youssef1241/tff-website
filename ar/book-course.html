@@ -34,24 +34,14 @@
                         </div>
                         
                         <div class="container">
-                            <div class="col-lg-10 col-md-6 col-sm-8 col-12 mx-auto">
+                            <div class="col-lg-8 col-md-12 col-sm-12 col-12 mx-auto">
                                 <div class="single-course-wrapper mx-auto mb-5">
                                     <img class="book-course-image" id="image">
                                 </div>
 
-                                <div class="book-course-form mt-5 mx-auto">
-                                    <form method="POST" class="custom-form course-form mb-5 mt-5">
-                                        <div class="mb-3">
-                                            <label for="name" class="form-label">الاسم</label>
-                                            <input type = "text" class="form-control" id="name" placeholder="ادخل اسمك">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="email" class="form-label">البريد الالكتروني</label>
-                                            <input type = "email" class="form-control" id="email" placeholder="بريدك الالكتروني">
-                                        </div>
-                                        <button type="submit" class="book-button btn btn-primary w-100">إرسال</button>
-                                    </form>
-                                </div>
+                                <div class="book-course-form mt-5 mx-auto" id ="form-wrapper">
+                                    <div id="kids-form" class="mx-auto"></div>
+                                    <div id="reg-form" class="mx-auto"></div>
                                 <script>
                                 const params = new URLSearchParams(window.location.search);
                                 const courseId = params.get("id");
@@ -65,6 +55,12 @@
 
                                         document.getElementById("title").textContent = 'احجز في " ' + course.title + '"' ;
                                         document.getElementById("image").src = content.thumbnail;
+                                        if (content.kids === true) {
+                                            loadHTML("kids-form", "/ar/kids-form.html");
+                                        }
+                                        else{
+                                            loadHTML("reg-form", "/ar/form.html");
+                                        }
                                     });
                                 </script>
 

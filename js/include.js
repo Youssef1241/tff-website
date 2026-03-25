@@ -7,7 +7,7 @@ async function loadHTML(id, file) {
   mount.innerHTML = text;
   return true;
 }
-  
+ 
 
 function changeLanguage(lang){
   const { pathname, search, hash } = window.location;
