@@ -72,7 +72,12 @@
 
                                         const bookBtn = document.getElementById("book-button");
                                         if (bookBtn) {
-                                            bookBtn.href = `book-course.html?id=${courseId}`;
+                                            if(content.kids === true){
+                                            bookBtn.href = `book-course-kids.html?id=${courseId}`;
+                                            }
+                                            else{
+                                                bookBtn.href = `book-course.html?id=${courseId}`;
+                                            }
                                         }
                                     });
                                 </script>

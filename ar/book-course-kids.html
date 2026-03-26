@@ -72,6 +72,14 @@
                                         <label for="job" class="form-label">الوظيفة</label>
                                         <input type="text" class="form-control" id="job" name="job" placeholder="ادخل وظيفتك الحالية">
                                     </div>
+                                    <div class="mb-3">
+                                        <label for="kids" class="form-label">عندك كم طفل</label>
+                                        <textarea class="form-control" id="kids" name="kids" placeholder="قولنا عندك كام طفل و ايه اعمارهم"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="kidProblems" class="form-label">ايه مشاكلك مع اطفالك</label>
+                                        <textarea class="form-control" id="kidProblems" name="kidProblems" placeholder="احكلنا عن مشاكلك مع اطفالك او اي صعوبات معاهم"></textarea>
+                                    </div>
                                     <button type="submit" class="book-button btn btn-primary w-100">إرسال</button>
                                     <div  class="text-center mt-3">
                                         <strong>*برجاء العلم ان تأكيد الحجز بدفع نصف المبلغ من خلال هذا الرقم: <a href="tel:01272523330" class="contact-number">012 72523330</a></strong>
@@ -93,8 +101,8 @@
                                         booksRead: e.target.elements.booksRead.value,
                                         therapist: e.target.elements.therapist.value,
                                         job: e.target.elements.job.value,
-                                        kids: "",
-                                        kidProblems: ""
+                                        kids: e.target.elements.kids.value,
+                                        kidProblems: e.target.elements.kidProblems.value
                                     };
                                     try{
                                         await(fetch(SCRIPT_URL, {

@@ -1575,7 +1575,6 @@ blockquote::before {
     border-radius: 2rem;
     /* overflow: hidden; */
     box-shadow: 0 1rem 4rem rgba(0, 105, 14, 0.24);
-    
 }
 
 .book-course-form div{
@@ -1587,9 +1586,22 @@ blockquote::before {
     
 }
 
-.test {
-  outline: 1px solid black;
+/* #phoneNumber{
+  border-color: red;
+} */
+/* 
+#phoneNumber input{
+  border-color: red;
+} */
+#book-course-form.was-validated #phoneNumber:invalid {
+  border: 1px solid red ;
 }
+#phoneNumber{
+  text-align: right;
+}
+/* .test {
+  outline: 1px solid black;
+} */
 
 /*---------------------------------------
   BLOG PAGE

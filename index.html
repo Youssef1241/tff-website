@@ -163,6 +163,31 @@
                                 <script src="https://unpkg.com/marked@4.3.0/marked.min.js"></script>
                                 <script>
                                     fetch('/_data/newsletter-ar.json').then(response => response.json()).then(data => {
+                                        const now = new Date();
+                                        const latest = data.issues
+                                        .filter(issue => new Date(issue.date) <= now)
+                                        .sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+                                        if (latest){
+
+                                        const dateObj = new Date(latest.date);
+                                        const options = { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' };
+                                        let htmlText = getTextPreview(latest.body, true, 500);
+                                        document.getElementById('latest-post').innerHTML += 
+                                            `
+                                            <h3 class="wide-card-title">${latest.title}</h3>
+                                            <div class="wide-card-meta">
+                                                <span class="badge">منشور جديد</span>
+                                                <small id="date"><i class="bi bi-clock ms-2"></i><i>${dateObj.toLocaleString('ar-EG', options).replace(',', '')}</i></small>
+                                            </div>
+                                            <p class="wide-card-text">
+                                                ${htmlText}
+                                            </p>
+                                            <div class="wide-card-actions">
+                                                <a href="/ar/blogpost.html?id=${latest.id}" class="custom-btn">اقرأ المزيد</a>
+                                            </div>
+                                            `
+                                        }
+                                        else{
                                         let issueCount = data.issues.length;
                                         let lastIssue = data.issues[issueCount - 1];
                                         const dateObj = new Date(lastIssue.date);
@@ -181,7 +206,8 @@
                                             <div class="wide-card-actions">
                                                 <a href="/ar/blogpost.html?id=${lastIssue.id}" class="custom-btn">اقرأ المزيد</a>
                                             </div>
-                                            `                                        
+                                            `      
+                                        }                                     
                                     });
                                 </script>
                             </div>
