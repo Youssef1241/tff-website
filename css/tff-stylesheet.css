@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
     font-family: 'Metropolis';
     src: url('../fonts/Metropolis/Metropolis-Regular.woff2') format('woff2'),
         url('../fonts/Metropolis/Metropolis-Regular.woff') format('woff');
@@ -32,7 +32,9 @@
     font-weight: bold;
     font-style: normal;
     font-display: swap;
-}
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
 
 /*---------------------------------------
   CUSTOM PROPERTIES ( VARIABLES )             
@@ -44,13 +46,14 @@
   /* potential secondary color from logo gray #abacb1 */
   --section-bg-color:             #fff5e7;
   --site-footer-bg-color:         #314231;
-  --custom-btn-bg-color:          #5a805b;
-  --custom-btn-bg-hover-color:    #6fbf44;
+  --custom-btn-bg-color:          #398f3c;
+  --custom-btn-bg-hover-color:    #66be37;
   --dark-color:                   #000000;
   --p-color:                      #717275;
   --border-color:                 #e9eaeb;
 
-  --body-font-family:             'Metropolis', sans-serif;
+  /* --body-font-family:             'Metropolis', sans-serif; */
+  --body-font-family:             'Cairo', sans-serif;
 
   --h1-font-size:                 52px;
   --h2-font-size:                 46px;
@@ -1586,13 +1589,23 @@ blockquote::before {
     
 }
 
-/* #phoneNumber{
-  border-color: red;
-} */
-/* 
-#phoneNumber input{
-  border-color: red;
-} */
+.appoint-btn{
+
+  background-color: var(--custom-btn-bg-color);
+  border: none;
+  border-radius: var(--border-radius-large);
+  color: var(--white-color);
+  font-size: var(--p-font-size);
+  font-weight: var(--font-weight-semibold);
+  transition: all 0.3s;
+  margin-bottom: 0;
+}
+
+.appoint-btn:hover, .appoint-btn:focus, .appoint-btn:active{
+  background: var(--custom-btn-bg-hover-color);
+  border-color: transparent;
+}
+
 #book-course-form.was-validated #phoneNumber:invalid {
   border: 1px solid red ;
 }
