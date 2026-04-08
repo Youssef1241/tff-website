@@ -33,7 +33,7 @@
                             <hr class="divider">
                         </div>
                         <div class="col-12">
-                            <div class="row mt-5 me-5 ms-5" id="courses-container">
+                            <div class="row mt-5 justify-content-center" id="courses-container">
                             <script>
                                 const lang = "ar";
                                 fetch('/_data/courses.json').then(res=>res.json()).then(data=>{
@@ -41,8 +41,8 @@
                                     data.courses.forEach(content => {
                                         const course = content[lang];
                                         container.innerHTML += `
-                                    <div class="col-lg-5 col-md-6 col-sm-8 col-12 mx-auto course-card-wrap">
-                                        <div class="course-card mx-auto">
+                                    <div class="col-lg-5 col-md-6 col-sm-8 col-12 course-card-wrap">
+                                        <div class="course-card">
                                             <a href="course.html?id=${content.id}" class="stretched-link"></a>
                 
                                                     <img src="${content.thumbnail}" class="course-image">

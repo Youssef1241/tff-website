@@ -226,8 +226,10 @@ strong {
 }
 
 .service-card-wrap{
+  min-width: min(220px,100%);
   aspect-ratio: 1/1;
   display: flex;
+  flex-shrink: 0;
   flex-direction: column;
   margin-bottom: 1rem;
   margin-top: 1rem;
@@ -249,9 +251,10 @@ strong {
 
 .service-card{
   /* height:100%; */
+  min-width: 100%;
   display:flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   padding: 30px;
 }
@@ -858,6 +861,19 @@ strong {
   width: 100%;
   max-width: 100%;
   /* outline: 1px red dashed; */
+}
+
+.about-content{
+  margin-inline: auto;
+  text-align: right;
+}
+
+.about-content h2,
+.about-content h5,
+.about-content p,
+.ideas-list,
+.ideas-list ul{
+  text-align: right;
 }
 
 /*---------------------------------------
@@ -1475,13 +1491,17 @@ blockquote::before {
 }
 
 .course-text{
-  max-width: inherit;
   text-align: center;
-  overflow-wrap:normal;
+  width: 100%;
 }
 
 .course-card-wrap{
-  margin-bottom: 5rem;
+  margin-bottom: 6rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .carousel-control-prev-icon,
@@ -1686,6 +1706,9 @@ blockquote::before {
 width : 25%;
 }
 
+.ideas-list{
+  min-width: 100%;
+}
 
 /*---------------------------------------
   EVENTS PAGE
@@ -2176,6 +2199,10 @@ width : 25%;
     object-fit: cover;
   }
 
+  #quotes-slide{
+    min-width:100%;
+  }
+
   #quotes-slide .carousel-image {
   height: 100%;
   object-fit: fill;
@@ -2363,9 +2390,20 @@ width : 25%;
     margin-top: 10px;
     margin-bottom: 10px;
   }
+
 }
 
 @media screen and (max-width: 580px) {
+  .ideas-list{
+    width: 100%;
+    padding-inline-start: 1rem;
+    margin-inline: 0;
+  }
+
+  .ideas-list > li > ul{
+    padding-inline-start: 1rem;
+  }
+
   .hero-section-full-height,
   #hero-slide .carousel-item,
   .carousel-image {
@@ -2398,12 +2436,12 @@ width : 25%;
 
   }
 
-  #quotes-slide .carousel-caption {
+  /* #quotes-slide .carousel-caption {
     clip-path: polygon(100% 100%, 100% 100px, 0 100%);
     padding-right: 50px;
     min-width: inherit;
     min-height: inherit;
-  }
+  } */
 
   .course-card{
     border-radius: 2.5rem;
@@ -2489,3 +2527,9 @@ width : 25%;
   }
 }
 
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .navbar-nav{
+    margin-top:1.5rem;
+    margin-left: -3rem;
+  }
+}
