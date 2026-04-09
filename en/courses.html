@@ -24,7 +24,7 @@
                 <div class="container-fluid px-5">
                     <div class="row"">
 
-                        <div class="col-lg-10 col-12 text-right me-auto ms-5 header-section">
+                        <div class="col-lg-10 col-12 header-section header-section-en">
                             <h2>Courses</h2>
                         </div>
 
@@ -32,19 +32,16 @@
                             <hr class="divider">
                         </div>
                         <div class="col-12">
-                            <div class="row mt-5 me-5 ms-5" id="courses-container">
+                            <div class="row mt-5 justify-content-center" id="courses-container">
                             <script>
                                 const lang = "en";
-                                let start = 1;
-                                let margin
                                 fetch('/_data/courses.json').then(res=>res.json()).then(data=>{
                                     const container = document.getElementById("courses-container");
                                     data.courses.forEach(content => {
                                         const course = content[lang];
-                                        start? margin="me":margin="ms";
                                         container.innerHTML += `
-                                    <div class="col-lg-5 col-md-6 col-sm-8 col-12 ${margin}-auto course-card-wrap mb-5">
-                                        <div class="course-card mx-auto">
+                                    <div class="col-lg-5 col-md-6 col-sm-8 col-12 course-card-wrap">
+                                        <div class="course-card">
                                             <a href="course.html?id=${content.id}" class="stretched-link"></a>
                 
                                                     <img src="${content.thumbnail}" class="course-image">
@@ -56,12 +53,6 @@
                                         </div>
                                     </div>
                                         `;
-                                    if(start===0){
-                                        start = 1;
-                                    }
-                                    else{
-                                        start = 0;
-                                    }
                                     });
                                 })
                             </script>
@@ -74,6 +65,7 @@
                 </div>
             </section>
 
+            
             
         </main>
 

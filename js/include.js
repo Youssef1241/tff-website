@@ -22,11 +22,11 @@ function changeLanguage(lang){
     case "/en/index.html":
       window.location.href="/index.html";
       return;
-    case "/en/blogpost.html":
-      window.location.href="/ar/blog.html";
-      return;
     case "/ar/blogpost.html":
-      window.location.href="/en/blog.html";
+      window.location.href="/en/index.html";
+      return;
+    case "/ar/blog.html":
+      window.location.href="/en/index.html";
       return;
 
   }

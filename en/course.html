@@ -25,7 +25,7 @@
                 <div class="container-fluid px-5">
                     <div class="row"">
 
-                        <div class="col-lg-10 col-12 text-right mx-auto ms-5 header-section">
+                        <div class="col-lg-10 col-12 header-section header-section-en">
                             <h2 id="title"></h2>
                         </div>
 
@@ -38,6 +38,9 @@
                                 <div class="single-course-wrapper mx-auto mb-5">
                                     <img class="single-course-image" id="image">
                                 </div>
+                                <div class="embed-video-wrap" id="embed-video">
+                                    
+                                </div>
 
                                 <p class="course-description mx-auto mb-5" id="description">
                                     
@@ -45,24 +48,36 @@
                                 <p class="mx-auto text-center">Price: <strong id="price"></strong> EGP</p>
                                 <script src="https://unpkg.com/marked@4.3.0/marked.min.js"></script>
                                 <script>
-                                const params = new URLSearchParams(window.location.search);
-                                const courseId = params.get("id");
-                                const lang = "en";
-                                
-                                fetch('/_data/courses.json')
+                                    const params = new URLSearchParams(window.location.search);
+                                    const courseId = params.get("id");
+                                    const lang = "en";
+                                    
+                                    fetch('/_data/courses.json')
                                     .then(res => res.json())
                                     .then(data => {
                                         const content = data.courses.find(c => c.id === courseId);
                                         const course = content[lang];
 
                                         document.getElementById("title").textContent = course.title;
+                                        const embedVideo = document.getElementById("embed-video");
+                                        if (content.video_url != undefined) {
+                                        content.video_url.forEach(url =>{
+                                            embedVideo.innerHTML += url;
+                                        });
+                                        }
+                                        
+                                        document.getElementById("description").innerHTML = marked.parse(course.body);
                                         document.getElementById("price").textContent = content.price;
                                         document.getElementById("image").src = content.thumbnail;
-                                        document.getElementById("description").innerHTML = marked.parse(course.body);
 
                                         const bookBtn = document.getElementById("book-button");
                                         if (bookBtn) {
-                                            bookBtn.href = `book-course.html?id=${courseId}`;
+                                            if(content.kids === true){
+                                            bookBtn.href = `book-course-kids.html?id=${courseId}`;
+                                            }
+                                            else{
+                                                bookBtn.href = `book-course.html?id=${courseId}`;
+                                            }
                                         }
                                     });
                                 </script>
@@ -70,7 +85,7 @@
                                     <a class="btn btn-outline-primary btn-lg w-50 book-button mb-4" id="book-button" href="#">
                                         Book
                                     </a>
-                                    <a class="btn btn-outline-secondary btn-lg w-50 back-button" href="/ar/courses.html">
+                                    <a class="btn btn-outline-secondary btn-lg w-50 back-button" href="/en/courses.html">
                                       Back to Courses
                                     </a>
                                 </div>

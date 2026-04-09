@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="description" content="">
+        <meta name="description" content="We provide psychotherapy and child parenting support">
         <meta name="author" content="">
 
         <title>Towards Functional Families</title>
@@ -16,12 +16,10 @@
         <link href="/css/tff-stylesheet.css" rel="stylesheet">
 
 
-    </head>
+</head>
     
-    <body>
-        <div id="en-navbar"></div>
-
-        <main>
+<body>
+<div id="en-navbar"></div>
 
             <section class="hero-section hero-section-full-height">
                 <div class="container-fluid">
@@ -82,25 +80,26 @@
                 </div>
             </section>
 
-            <section class="section-padding">
+            <section class="mt-5">
                 <div class="container-fluid px-5">
-                    <div class="row">
+                    <div class="row ">
 
-                        <div class="col-lg-10 col-12 text-right me-auto ms-5 header-section">
-                            <h2>Our Services</h2>
+                        <div class="col-lg-10 col-12 header-section header-section-en">
+                            <h2>What We Offer</h2>
                         </div>
+
                         <div class="col-12 my-3">
                             <hr class="divider">
                         </div>
                         <div class="col-12">
                             <div class="row custom-gap justify-content-center">
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                                    <div class="service-card-wrap ">
+                                    <div class="service-card-wrap">
                                         
                                         <a href="/en/courses.html" class="stretched-link"></a>
                                         <div class="custom-block service-card">
                                             <div class="custom-block-body">
-                                                <img src="/images/cards/colored-courses.png" class="card-image">
+                                                <img src="/images/cards/colored-courses-green.png" class="card-image">
                                                     <h5 class="mb-1" style="text-align: center;">Courses</h5>
                 
                                                     <p>Browse courses by expert psychiatrists</p>
@@ -113,13 +112,13 @@
                                     <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                         <div class="service-card-wrap ">
                 
-                                            <a href="/en/courses.html" class="stretched-link"></a>
+                                            <a href="/en/book-appointment.html" class="stretched-link"></a>
                                             <div class="custom-block service-card">
                                                 <div class="custom-block-body">
-                                                    <img src="/images/cards/colored-appointment.png" class="card-image">
+                                                    <img src="/images/cards/colored-appointment-green.png" class="card-image">
                                                     <h5 class="mb-1" style="text-align: center;">Book a Session</h5>
                 
-                                                    <p>Book an appointment online or at our clinic</p>
+                                                    <p>Book an appointment at the clinic or online</p>
                 
                                                 </div>
                                             </div>
@@ -130,13 +129,13 @@
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-12">
                                     <div class="service-card-wrap ">
                                         
-                                        <a href="/en/courses.html" class="stretched-link"></a>
+                                        <a href="/en/books.html" class="stretched-link"></a>
                                         <div class="custom-block service-card">
                                             <div class="custom-block-body">
-                                                <img src="/images/cards/colored-books.png" class="card-image">
+                                                <img src="/images/cards/colored-books-green.png" class="card-image">
                                                 <h5 class="mb-1" style="text-align: center;">Books</h5>
             
-                                                <p>Browse Dr. Marlene's Books</p>
+                                                <p>Browse books by Dr. Marlene Bastawros</p>
             
                                             </div>
                                         </div>
@@ -152,20 +151,63 @@
                     </div>
                 </div>
             </section>
+        <section class="section-padding">
+                <div class="container-fluid px-5">
+                        <div class="col-lg-10 col-12 header-section header-section-en">
+                        <h2>Featured Course</h2>
+                    </div>
+                    <div class="col-12 my-3">
+                        <hr class="divider">
+                    </div>
+
+                        <div class="row test mx-auto mt-5">
+                            
+                            <div class="col-lg-9 col-md-7 col-11 col-sm-10 test mx-auto">
+                                <div class="custom-text-block" id = "latest-course">
+                                    <script src="https://unpkg.com/marked@4.3.0/marked.min.js"></script>
+                                    <script>
+                                        fetch('/_data/courses.json').then(response => response.json()).then(data => {
+                                            let course = data.courses[0];
+                                            const content = course["en"];
+                                            document.getElementById("latest-course").innerHTML += `
+                                            <h2 class="mb-0" style="font-size: 2.5rem;" >${content.title}</h2>
+                                            <br>
+                                            <p>${getTextPreview(content.body, true, 750)}</p>
+                                            <div class="wide-card-actions justify-content-center mb-5">
+                                                <a href="/en/course.html?id=${course.id}" class="custom-btn">Read More</a>
+                                            </div>
+                                            `;
+                                        });
+                                    </script>
+
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-3 col-md-5 col-12 d-flex justify-content-end align-items-center">
+                                    <img src="/images/courses/adopted-resized.jpg" class="home-course-image  bg-light shadow-lg img-fluid" alt="Dr. Marlene Bastawros">
+                                </div>
+                        <div class="col-12 my-3">
+                            <hr class="divider">
+                        </div>
+                                <div class="wide-card-actions test justify-content-center mt-5">
+                                    <a href="/en/courses.html" class="custom-btn">Browse All Courses</a>
+                                </div>
+                            </div>
+                    </div>
+            </section>
 
             <section class="section-padding section-bg">
                 <div class="container-fluid px-5">
-                    <div class="col-lg-10 col-12 text-left me-auto ms-5 mb-5 header-section">
+                        <div class="col-lg-10 col-12 header-section header-section-en">
                         <h2>Reviews</h2>
                     </div>
                     <div class="row">
                         
-                      
                         <section class="review-section">
                             <div class="review-wrapper">
                                 <div class="review-card">
                                     <p class="review-text">
-                                        "I thank you so much because I attended twice, and it really made a huge difference in my life." <small>(translated)</small>
+                                        "Thank you so much. I attended twice, and it made a huge difference in my life."
                                     </p>
                                     <div class="review-author">
                                         <strong>Samae Bald</strong>
@@ -173,7 +215,7 @@
                                 </div>
                                 <div class="review-card">
                                     <p class="review-text">
-                                        "It was a treasure this program"
+                                        "This program was a treasure." <small>(translated)</small>
                                     </p>
                                     <div class="review-author">
                                         <strong>Mona Jack</strong>
@@ -187,43 +229,32 @@
                     </div>
                 </div>
             </section>
+
+
             <section class="about-section section-padding">
-                <div class="container">
+                <div class="container test justify-content-center align-items-center">
                     
 
-                        <div class="row g-5 align-items-center justify-content-center about-row" style="">
+                        <div class="row g-5 align-items-center justify-content-center about-row mx-auto test">
                             
-                            <div class="col-lg-5 col-md-7 col-11 col-sm-10 ms-auto">
+                            <div class="col-lg-5 col-md-7 col-11 col-sm-10 mx-auto">
                                 <div class="custom-text-block">
                                     <h2 class="mb-0">Dr. Marlene Bastawros</h2>
                                     
-                                    <p class="text-muted mb-lg-4 mb-md-4">Founder, "Towards Functional Families"</p>
+                                    <p class="text-muted mb-lg-4 mb-md-4">Founder of "Towards Functional Families"</p>
                                     
                                     <p>
-                                        Holder of an M.B.B.CH from the Faculty of Medicine, Cairo University, 
-                                        and a Master’s degree in Psychiatry and Neurology from Kasr El Aini, Cairo University, 
-                                        as well as a Clinical Psychiatry Diploma from Abbasia Mental Hospital. 
-                                        She is a certified psychiatrist holding advanced qualifications in psychiatry and clinical practice.
-                                    </p>
-                                
-                                    <p>
-                                        She started her career at El Rakawy Mental Hospital, followed by El Abassia Mental Hospital and Behman Psychiatric Hospital.
-                                    </p>
-                                
-                                    <p>
-                                        She is the founder of Towards Functional Families, which provides multiple programs for different family members, 
-                                        aiming to promote healthy parenting and marriage.
-                                    </p>
-                                
-                                    <p>
-                                        Since 2009 and continuing to the present, she has been running mothers’ groups, facilitating the growth and development 
-                                        of a team of mothers who are now leading training programs for other mothers.
-                                    </p>
-                                
-                                    <p>
-                                        She provides lectures and customized workshops for different organizations and NGOs, including UN Women, UNFPA, 
-                                        and the National Council for Women. She also lectures teachers and parents in various French and English schools in Cairo.
-                                    </p>
+                                        She is a certified psychiatrist with an M.B.B.CH from the Faculty of Medicine, Cairo University, in addition to a Master's degree in Psychiatry and Neurology from Kasr Al Ainy School of Medicine. She also holds a Clinical Psychiatry Diploma from Al-Abbassia Mental Health Hospital.</p>
+                                        
+                                        <p>She began her professional journey at El-Rokawy Mental Health Hospital, followed by positions at Al-Abbassia Mental Health Hospital and Behman Psychiatric Hospital, where she gained extensive clinical experience in mental health and psychotherapy.</p>
+                                        
+                                        <p>Driven by her passion for strengthening family systems, she founded Towards Functional Families, an initiative dedicated to supporting healthy parenting and sound marital relationships through specialized programs designed for different family members.</p>
+                                        
+                                        <p>Since 2009, she has led mothers' groups that have grown into a dynamic community. Over the years, these groups evolved into a team of mothers who now facilitate and train other mothers, creating a sustainable cycle of peer education and empowerment.</p>
+                                        
+                                        <p>She has delivered tailored lectures and workshops for many major organizations and NGOs, including UN Women, UNFPA, and the National Council for Women. In addition, she regularly lectures teachers and parents in French and English schools across Cairo.</p>
+                                        
+                                        
                                     </div>
                                 </div>
                                 
@@ -244,6 +275,7 @@
         <script src="/js/jquery.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
         <script src="/js/jquery.sticky.js"></script>
+        <script src="/js/clean-posts.js"></script>
         <!-- <script src="js/sideways-scroll.js"></script> -->
 
     </body>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>نحو عائلة فاعلة</title>
+        <link rel="icon" type="image/x-icon" href="/images/tff-logo.png">
+
+        <!-- CSS FILES -->        
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/bootstrap-icons.css" rel="stylesheet">
+        <link href="/css/tff-stylesheet.css" rel="stylesheet">
+
+
+</head>
+    
+<body>
+<div id="en-navbar"></div>
+
+            <section class="section-padding">
+                <div class="container-fluid px-5">
+                    <div class="row"">
+
+                        <div class="col-lg-10 col-12 header-section header-section-en">
+                            <h2>Quotes</h2>
+                        </div>
+
+                        <div class="col-12 my-3 mb-5">
+                            <hr class="divider">
+                        </div>
+                            <div id="quotes-slide" class="carousel carousel-fade slide mx-auto" data-bs-ride="carousel">
+                                <div class="carousel-inner rounded-5">
+                                    <!-- <div class="carousel-item active">
+                                        <img src="images/slide/adults-kids.jpg" class="carousel-image img-fluid" alt="...">
+                                    </div> -->
+
+                                    <div class="carousel-item active">
+                                        <img src="/images/quotes/quotes1.jpg" class="carousel-image img-fluid" alt="quote 1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/images/quotes/quotes2.jpg" class="carousel-image img-fluid" alt="quote 2">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/images/quotes/quotes3.jpg" class="carousel-image img-fluid" alt="quote 3">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/images/quotes/quotes4.jpeg" class="carousel-image img-fluid" alt="quote 4">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/images/quotes/quotes5.jpeg" class="carousel-image img-fluid" alt="quote 5">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/images/quotes/quotes6.jpg" class="carousel-image img-fluid" alt="quote 6">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/images/quotes/quotes7.jpg" class="carousel-image img-fluid" alt="quote 7">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/images/quotes/quotes8.jpg" class="carousel-image img-fluid" alt="quote 8">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/images/quotes/quotes9.jpg" class="carousel-image img-fluid" alt="quote 9">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/images/quotes/quotes10.jpg" class="carousel-image img-fluid" alt="quote 10">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/images/quotes/quotes11.jpeg" class="carousel-image img-fluid" alt="quote 11">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/images/quotes/quotes12.jpeg" class="carousel-image img-fluid" alt="quote 12">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/images/quotes/quotes13.jpeg" class="carousel-image img-fluid" alt="quote 13">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/images/quotes/quotes14.jpg" class="carousel-image img-fluid" alt="quote 14">
+                                    </div>
+                            </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#quotes-slide" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+
+                                <button class="carousel-control-next" type="button" data-bs-target="#quotes-slide" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+
+                    </div>
+
+                        </div>
+                            <script>
+                                fetch('/_data/quotes.json')
+                                .then(r => r.json())
+                                .then(data => {
+                                    const container = document.querySelector('.masonry');
+                                    data.quotes.forEach(url => {
+                                    const img = document.createElement('img');
+                                    img.src = url;
+                                    container.appendChild(img);
+                                    });
+                                });
+                            </script>
+                        </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            
+        </main>
+
+        <div id="en-footer"></div>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="/js/include.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/jquery.sticky.js"></script>
+        <!-- <script src="js/sideways-scroll.js"></script> -->
+
+    </body>
+</html>
