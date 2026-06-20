@@ -13,6 +13,7 @@ fetch("/_data/courses.json")
             selectedCourse = content;
             document.getElementById("title").textContent = 'Book in " ' + selectedCourse.title + '"';
             document.getElementById("image").src = content.thumbnail;
+            document.getElementById("image").alt = content[lang].title + " course registration";
         } else {
             selectedCourse = null;
         }

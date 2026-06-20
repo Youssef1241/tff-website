@@ -4,10 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="description" content="">
+        <meta name="description" content="اطّلع على فعالياتنا وأنشطتنا. منظمتنا موجهة نحو الأبوة والأمومة، مع تركيز خاص على دور الأمهات، إذ يُعدّ دورهن محورياً في مجتمعنا. تقودنا الدكتورة مارلين بسطاوروس.">
         <meta name="author" content="">
 
         <title>نحو عائلة فاعلة</title>
+        <meta property="og:title" content="فعالياتنا | نحو عائلة فاعلة" />
+        <meta property="og:description" content="اطّلع على فعالياتنا وأنشطتنا. منظمتنا موجهة نحو الأبوة والأمومة، مع تركيز خاص على دور الأمهات، إذ يُعدّ دورهن محورياً في مجتمعنا. تقودنا الدكتورة مارلين بسطاوروس." />
+        <meta property="og:url" content="https://functionalfamiliestherapy.com/ar/events.html" />
+        <meta property="og:image" content="https://functionalfamiliestherapy.com/images/tff-logo.png" />
+        <meta property="og:type" content="website" />
+        
         <link rel="icon" type="image/x-icon" href="/images/tff-logo.png">
 
         <!-- CSS FILES -->        
@@ -41,7 +47,7 @@
                             .then(data => {
                                 data.events.forEach(event => {
                                 document.getElementById('events-wrap').innerHTML += `<div class="event-card-wrapper-event-card">
-                                    <img src="${event.imgURL}" alt="Event Logo" class="event-card-image">
+                                    <img src="${event.imgURL}" alt="${event.title} — فعالية نحو عائلة فاعلة" class="event-card-image">
                                         <div class="event-card-content">
                                             <h3>${event.title}</h3>
                                             <small><i class="bi bi-clock ms-2"></i><i>${event.date}</i></small>

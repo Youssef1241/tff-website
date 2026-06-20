@@ -14,6 +14,7 @@ fetch('/_data/courses.json')
             selectedCourse = content["ar"];
             document.getElementById("title").textContent = 'احجز في " ' + selectedCourse.title + '"' ;
             document.getElementById("image").src = content.thumbnail;
+            document.getElementById("image").alt = selectedCourse.title + " — صورة الدورة";
         } else {
             selectedCourse = null;
         }
