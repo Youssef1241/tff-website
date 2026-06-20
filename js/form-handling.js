@@ -31,8 +31,8 @@ document.getElementById("book-course-form").addEventListener("submit", async fun
         booksRead: e.target.elements.booksRead.value,
         therapist: e.target.elements.therapist.value,
         job: e.target.elements.job.value,
-        kids: e.target.elements.kids.value,
-        kidProblems: e.target.elements.kidProblems.value
+        kids: e.target.elements.kids?.value,
+        kidProblems: e.target.elements.kidProblems?.value
     };
     try{
         await(fetch(SCRIPT_URL, {
