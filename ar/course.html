@@ -10,10 +10,56 @@
         <title>نحو عائلة فاعلة</title>
         <meta property="og:title" content="تفاصيل الدورة | نحو عائلة فاعلة" />
         <meta property="og:description" content="اطّلع على تفاصيل الدورة وسجّل الآن. منظمتنا موجهة نحو الأبوة والأمومة، مع تركيز خاص على دور الأمهات، إذ يُعدّ دورهن محورياً في مجتمعنا. تقودنا الدكتورة مارلين بسطاوروس." />
-        <meta property="og:url" content="https://functionalfamiliestherapy.com/ar/course.html" />
-        <meta property="og:image" content="https://functionalfamiliestherapy.com/images/tff-logo.png" />
+        <!-- <meta property="og:url" content="https://www.functionalfamiliestherapy.com/ar/course.html" /> -->
+        <meta property="og:image" content="https://www.functionalfamiliestherapy.com/images/tff-logo.png" />
         <meta property="og:type" content="website" />
         <link rel="icon" type="image/x-icon" href="/images/tff-logo.png">
+        <link rel="alternate" hreflang="en" href="https:/www.functionalfamiliestherapy.com/en/course.html" />
+        <link rel="alternate" hreflang="ar" href="https://www.functionalfamiliestherapy.com/ar/course.html" />
+        <link rel="alternate" hreflang="x-default" href="https://www.functionalfamiliestherapy.com/en/course.html" />
+        <!-- <link rel="canonical" href="https://www.functionalfamiliestherapy.com/ar/course.html" /> -->
+
+        <script>
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+
+            if (id) {
+            // 1. Sanitize the ID to prevent XSS injection in the DOM
+            const cleanId = encodeURIComponent(id);
+            const canonicalUrl = `https://www.functionalfamiliestherapy.com/ar/course.html?id=${cleanId}`;
+
+            // 2. Set Canonical Tag (updates existing or creates new)
+            let canonicalLink = document.querySelector('link[rel="canonical"]');
+            if (!canonicalLink) {
+                canonicalLink = document.createElement('link');
+                canonicalLink.rel = 'canonical';
+                document.head.appendChild(canonicalLink);
+            }
+            canonicalLink.href = canonicalUrl;
+
+            // 3. Set Open Graph URL for Social Media Sharing (Facebook, LinkedIn, etc.)
+            let ogUrl = document.querySelector('meta[property="og:url"]');
+            if (!ogUrl) {
+                ogUrl = document.createElement('meta');
+                ogUrl.setAttribute('property', 'og:url');
+                document.head.appendChild(ogUrl);
+            }
+            ogUrl.content = canonicalUrl;
+            } else {
+            // 4. Fallback: If no ID is present, direct crawlers back to the main blog page or set noindex
+            let robotsMeta = document.querySelector('meta[name="robots"]');
+            if (!robotsMeta) {
+                robotsMeta = document.createElement('meta');
+                robotsMeta.name = 'robots';
+                document.head.appendChild(robotsMeta);
+            }
+            robotsMeta.content = 'noindex, follow';
+            }
+
+        </script>
+        
+
 
         <!-- CSS FILES -->        
         <link href="/css/bootstrap.min.css" rel="stylesheet">
