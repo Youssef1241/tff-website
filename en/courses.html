@@ -25,6 +25,27 @@
         <link href="/css/bootstrap-icons.css" rel="stylesheet">
         <link href="/css/tff-stylesheet.css" rel="stylesheet">
 
+        <style>
+            /* "New" badge for the first course card */
+            .course-card-wrap {
+                position: relative;
+            }
+            .new-badge {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                z-index: 2;
+                background-color: #2e8b57; /* green */
+                color: #fff;
+                font-size: 0.75rem;
+                font-weight: 600;
+                padding: 4px 12px;
+                border-radius: 20px;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+                letter-spacing: 0.3px;
+            }
+        </style>
+
 </head>
     
 <body>
@@ -47,10 +68,14 @@
                                 const lang = "en";
                                 fetch('/_data/courses.json').then(res=>res.json()).then(data=>{
                                     const container = document.getElementById("courses-container");
-                                    data.courses.forEach(content => {
+                                    data.courses.forEach((content, index) => {
                                         const course = content[lang];
+                                        const badge = index === 0
+                                            ? `<span class="new-badge">New</span>`
+                                            : '';
                                         container.innerHTML += `
                                     <div class="col-lg-5 col-md-6 col-sm-8 col-12 course-card-wrap">
+                                        ${badge}
                                         <div class="course-card">
                                             <a href="course.html?id=${content.id}" class="stretched-link"></a>
                 
